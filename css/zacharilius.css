@@ -1,3 +1,6 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* Site colors */
+/*
 .dark-primary-color    { background: #00796B; }
 .default-primary-color { background: #009688; }
 .light-primary-color   { background: #B2DFDB; }
@@ -6,7 +9,26 @@
 .primary-text-color    { color: #212121; }
 .secondary-text-color  { color: #727272; }
 .divider-color         { border-color: #B6B6B6; }
+*/
 
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* Site */
+html {
+	height: 100%;
+}
+
+body {
+  text-align: center;
+  font-family: Pacifo, sans-serif;
+  background-color: #009688;
+  color: #FFFFFF;
+  margin: 0 auto;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* Navigation */
 nav{
 	padding-top: 10px;
 	background-color: #00796B;
@@ -28,18 +50,7 @@ nav{
 	margin:0px 0px 0px 0px;
 	padding:0px 0px 0px 0px;
 }
-html{
-	height: 100%;
-}
-body{
-  text-align: center;
-  font-family: Pacifo, sans-serif;
-  background-color: #009688;
-  color: #FFFFFF;
-  margin: 0 auto;
-  overflow-y: scroll;
-  height: 100%;
-}
+
 
 /* Tooltip */
 .tooltip-message + .tooltip > .tooltip-inner {
@@ -343,15 +354,61 @@ div[ng-controller=MapCtrl] #panel{
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/*  Weather buttons */
+/*  Weather */
+
+.weather-panel {
+	display: none;
+}
+
+/* -  -  -  -  -  -  -  -  -  -  -  -  -  -   -  -  -  -  -  - */
+/*  Sun */
 #sun-icon:hover, #sun-icon:focus, #sun-icon.active-icon {
 	color:#F4CC0A;
 }
+
+#sunny-panel {
+}
+
+/* -  -  -  -  -  -  -  -  -  -  -  -  -  -   -  -  -  -  -  - */
+/*  Night */
 
 #night-icon:hover, #night-icon:focus, #night-icon.active-icon {
 	color:#FBF619;
 }
 
+#night-panel {
+}
+
+.star-five {
+	position: fixed;
+	font-size: 7px;
+	animation: colorchange 5s infinite;
+    -webkit-animation: colorchange 5s infinite;
+}
+
+@keyframes colorchange {
+	0%   {color: #FFFFFF;}
+	25%  {color: #EEEE00;}
+	50%  {color: #FFFF00;}
+	75%  {color: #EEEE00;}
+	100% {color: #FFFFFF;}
+}
+
+@-webkit-keyframes colorchange { /* Safari and Chrome - necessary duplicate */
+	0%   {color: #FFFFFF;}
+	25%  {color: #EEEE00;}
+	50%  {color: #FFFF00;}
+	75%  {color: #EEEE00;}
+	100% {color: #FFFFFF;}
+}
+
+/* -  -  -  -  -  -  -  -  -  -  -  -  -  -   -  -  -  -  -  - */
+/*  Rain */
 #rain-icon:hover, #rain-icon:focus, #rain-icon.active-icon {
 	color:#03DDFF;
 }
+
+#rainy-panel {
+}
+
+
