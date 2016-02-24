@@ -355,6 +355,9 @@ div[ng-controller=MapCtrl] #panel{
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Weather */
+.weather-panel-container {
+	margin: 5px;
+}
 
 .weather-panel {
 	display: none;
@@ -411,4 +414,174 @@ div[ng-controller=MapCtrl] #panel{
 #rainy-panel {
 }
 
+.cloud-1 {
+	position: relative;
+	display: inline-block;
+	width: 160px;
+	height: 100px;
+	background: white;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+}
 
+.cloud-1:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 180px;
+	height: 100px;
+	background: white;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	-ms-transform: rotate(-45deg); /* IE 9 */
+    -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+    transform: rotate(-45deg);
+}
+
+.cloud-1:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 160px;
+	height: 100px;
+	background: white;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	-ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);	
+}
+
+.cloud-2 {
+	position: relative;
+	display: inline-block;
+	width: 230px;
+	height: 100px;
+	background: white;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+}
+
+.cloud-2:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 180px;
+	height: 100px;
+	background: white;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	-ms-transform: rotate(150deg); /* IE 9 */
+    -webkit-transform: rotate(159deg); /* Chrome, Safari, Opera */
+    transform: rotate(150deg);
+}
+
+.cloud-2:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 220px;
+	height: 100px;
+	background: white;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	-ms-transform: rotate(200deg); /* IE 9 */
+    -webkit-transform: rotate(200deg); /* Chrome, Safari, Opera */
+    transform: rotate(200deg);	
+}
+
+.cloud-3 {
+	position: relative;
+	display: inline-block;
+	width: 160px;
+    height: 100px;
+	background: white;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+}
+
+.cloud-3:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 180px;
+	height: 100px;
+	background: white;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	-ms-transform: rotate(-25deg); /* IE 9 */
+    -webkit-transform: rotate(-25deg); /* Chrome, Safari, Opera */
+    transform: rotate(-25deg);
+}
+
+.cloud-3:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 160px;
+	height: 100px;
+	background: white;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	-ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);	
+}
+
+.cloud-4 {
+	position: relative;
+	display: inline-block;
+	width: 140px;
+    height: 110px;
+	background: white;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+}
+
+.cloud-4:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 130px;
+	height: 100px;
+	background: white;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	-ms-transform: rotate(-25deg); /* IE 9 */
+    -webkit-transform: rotate(-25deg); /* Chrome, Safari, Opera */
+    transform: rotate(-25deg);
+}
+
+.cloud-4:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 160px;
+	height: 100px;
+	background: white;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	-ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);	
+}
