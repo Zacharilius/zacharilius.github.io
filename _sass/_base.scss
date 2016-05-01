@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 /**
  * Links
  */
-a {
+main a {
     color: $brand-color;
     text-decoration: none;
 
@@ -103,6 +103,7 @@ a {
         text-decoration: underline;
     }
 }
+
 
 
 
@@ -202,5 +203,18 @@ pre {
         path {
             fill: $white-color;
         }
+    }
+}
+
+/**
+ * Header
+ */
+header {
+    a {
+    color: $white-color;
+    text-decoration: none;
+    }
+    a.is-active, a:hover {
+        text-decoration: underline;
     }
 }

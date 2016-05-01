@@ -65,12 +65,12 @@ h1, h2, h3, h4, h5, h6 {
 /**
  * Links
  */
-a {
+main a {
   color: #2a7ae2;
   text-decoration: none; }
-  a:visited {
+  main a:visited {
     color: #1756a9; }
-  a:hover {
+  main a:hover {
     color: #111;
     text-decoration: underline; }
 
@@ -143,6 +143,15 @@ pre {
   vertical-align: middle; }
   .icon > svg path {
     fill: #ffffff; }
+
+/**
+ * Header
+ */
+header a {
+  color: #ffffff;
+  text-decoration: none; }
+header a.is-active, header a:hover {
+  text-decoration: underline; }
 
 /**
  * Site header
