@@ -4,16 +4,20 @@
   {% include head.html %}
 
   <body>
+    <div class="demo-layout-waterfall mdl-layout mdl-js-layout">
 
-    {% include header.html %}
+      {% include header.html %}
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <div class="wrapper">
+            {{ content }}
+          </div>
+        </div>
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+        {% include footer.html %}
+      </main>
     </div>
-
-    {% include footer.html %}
+    {% include script_load.html %}
 
   </body>
 
