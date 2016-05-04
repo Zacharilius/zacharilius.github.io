@@ -6,24 +6,21 @@ body {
   margin: 0 auto;
 }
 
-/*
- * Handles desktop screens
- */
+//Handles desktop screens
 @media screen and (min-width:800px) {
-.image-cropper{
-	position: fixed;
-	bottom: 0px;
-    z-index: -2;
+  .image-cropper{
+  	position: fixed;
+  	bottom: 0px;
+      z-index: -2;
+  }
+  #seattle-pic{
+  	margin: 0 auto;
+  	width: 100%;
+      z-index: -2;
+  }
 }
-#seattle-pic{
-	margin: 0 auto;
-	width: 100%;
-    z-index: -2;
-}
-}
-/*
- * Handles screens for tablets & phones
-*/
+
+//Handles screens for tablets & phones
 @media screen and (max-width:800px){
   .image-cropper {
     margin: 0 auto;
@@ -43,6 +40,8 @@ body {
     width: 150%;
   }
 }
+
+//Handles screens for phones
 @media screen and (max-width:500px) {
   #intro{
     margin-top: 20px;
@@ -65,6 +64,7 @@ body {
     width: 250%;
   }
 }
+
 .picture-container{
 	overflow: hidden;
 	margin: 0 auto;
