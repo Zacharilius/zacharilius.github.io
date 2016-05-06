@@ -1,0 +1,42 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* Navigation */
+
+header {
+	background-color: #00796B !important;
+}
+
+nav .mdl-navigation__link {
+	border-bottom: 5px solid transparent;
+}
+
+nav .is-active {
+    opacity: 1;
+    border-bottom: 5px solid rgb(255,171,64);
+    height: 64px;
+}
+
+.nav-top .icon {
+	font-size: 35px;
+	color: #FFFFFF;
+}
+
+.nav-drawer .icon {
+	font-size: 25px;
+	color: #757575;
+}
+
+.nav-github:hover, .nav-github:focus {
+	color:#6D3353;
+}
+
+.nav-codepen:hover, .nav-codepen:focus {
+	color:#000;
+}
+
+.nav-linkedin:hover, .nav-linkedin:focus {
+	color: #00AFF0;	
+}
+
+.nav-instagram:hover, .nav-instagram:focus {
+	color:#F15E5E;
+}

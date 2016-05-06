@@ -1,2 +1,8 @@
 <!-- Libraries -->
 <script src="{{ "/lib/material-design-lite/material.min.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/lib/jquery/dist/jquery.min.js" | prepend: site.baseurl }}"></script>
+
+<!-- Page JS -->
+{% if page.page_js %}
+	<script src="/js/{{ page.page_js }}"></script>
+{% endif %}

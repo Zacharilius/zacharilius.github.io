@@ -211,10 +211,7 @@ pre {
  */
 header {
     a {
-    color: $white-color;
-    text-decoration: none;
-    }
-    a.is-active, a:hover {
-        text-decoration: underline;
+        color: $white-color;
+        text-decoration: none;
     }
 }

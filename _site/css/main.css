@@ -150,8 +150,6 @@ pre {
 header a {
   color: #ffffff;
   text-decoration: none; }
-header a.is-active, header a:hover {
-  text-decoration: underline; }
 
 /**
  * Site header
