@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="/images/favicon.ico" rel="shortcut icon">
 
-	<title>Zacharilius</title>
+	<title>Map</title>
 	<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
 
@@ -25,10 +25,10 @@
 
 	<!-- Page CSS -->
 	
-		<link rel="stylesheet" href="/css/index.css">
+		<link rel="stylesheet" href="/css/map.css">
 	
 
-	<link rel="canonical" href="http://zacharilius.me/">
+	<link rel="canonical" href="http://zacharilius.me/map/">
 	<link rel="alternate" type="application/rss+xml" title="Zacharilius" href="http://zacharilius.me/feed.xml">
 </head>
 
@@ -67,7 +67,7 @@
         
           
             
-              <a class="mdl-navigation__link" href="/map/">Map</a>
+              <a class="mdl-navigation__link is-active " href="/map/">Map</a>
             
           
         
@@ -150,15 +150,10 @@
   </div>
 
       <main class="mdl-layout__content">
-        <div class="portfolio-container">
-    <div class="title-container">
-        <h1 class="title">Zachary Bensley</h1>
-        <h3 class="sub-title">Full Stack Developer</h3>
-    </div>
-    <div class="image-cropper">
-      <img class="center-image" alt="Seattle Skyline" id="seattle-pic" src="/images/seattle_skyline.png">
-    </div>
+        <div id="map">
 </div>
+
+<script src="/lib/leaflet/leaflet.js"></script>
 
       </main>
     </div>
@@ -168,7 +163,7 @@
 
 <!-- Page JS -->
 
-	<script src="/js/index.js"></script>
+	<script src="/js/map.js"></script>
 
 
 
