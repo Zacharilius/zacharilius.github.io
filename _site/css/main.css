@@ -273,6 +273,9 @@ header a {
 .page-content {
   padding: 30px 0; }
 
+@media screen and (max-width: 1024px) {
+  .page-content {
+    padding: 60px 0; } }
 .page-heading {
   font-size: 20px; }
 

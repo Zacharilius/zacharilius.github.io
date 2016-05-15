@@ -2,6 +2,12 @@
     margin: 0 auto;
 }
 
+@media screen and (max-width: 1024px) {
+    .resume-container {
+       margin-top: 30px;
+    }
+}
+
 @media (min-width: 768px) {
     .resume-container {
         max-width: 730px;
