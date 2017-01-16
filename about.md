@@ -5,8 +5,6 @@ permalink: /about/
 group: navigation
 ---
 
-My name is Zachary Bensley and I'm a full stack developer based out of Seattle. 
-When creating web applications, I focus on creating well-designed user 
-experiences. I've currently working as a Django developer but I've also developed
-web applications in Java. <a href="mailto:zabensley@gmail.com">Contact me</a> if
+My name is Zachary Bensley and I'm a full stack engineer based out of Seattle.
+I love writing code and making maps. Most of my personal projects try to incorporate my love of coding and maps. I'm currently working as full stack Django engineer. <a href="mailto:info@zacharilius.me">Contact me</a> if
 you want to collaborate on a project.
