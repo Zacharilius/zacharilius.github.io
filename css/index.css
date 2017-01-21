@@ -6,6 +6,10 @@ body {
     margin: 0 auto;
 }
 
+body.night-sky {
+    background-color: #121212;
+}
+
 /*
  * Handles desktop screens
  */
@@ -194,6 +198,21 @@ body {
     left: 200px;
 }
 
+.star-five-container.star-five-twinkle {
+           animation: smooth 5s ease-in;
+         -o-animation: smooth 5s ease-in;
+        -ms-animation: smooth 5s ease-in;
+       -moz-animation: smooth 5s ease-in;
+    -webkit-animation: smooth 5s ease-in;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes smooth {
+    0% { opacity: .3;}
+    50% { opacity: 1;}
+    100% { opacity: .3;}
+}
+
 .star-five {
     margin: 0px;
     position: relative;
@@ -204,11 +223,11 @@ body {
     border-right:  100px solid transparent;
     border-bottom: 70px  solid #FFFF00;
     border-left:   100px solid transparent;
-    transform:         rotate(35deg) scale(.03);
-    -moz-transform:    rotate(35deg) scale(.03);
+            transform: rotate(35deg) scale(.03);
+         -o-transform: rotate(35deg) scale(.03);
+        -ms-transform: rotate(35deg) scale(.03);
+       -moz-transform: rotate(35deg) scale(.03);
     -webkit-transform: rotate(35deg) scale(.03);
-    -ms-transform:     rotate(35deg) scale(.03);
-    -o-transform:      rotate(35deg) scale(.03);
 }
 
 .star-five:before {

@@ -2,5 +2,5 @@
 My deployed personal website.
 
 ## How to run.
- sudo gem install jekyll
- jekyll serve
+sudo gem install jekyll
+jekyll serve

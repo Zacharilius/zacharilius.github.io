@@ -37,6 +37,12 @@ function setupDay() {
 }
 
 function setupNight() {
+    $('body').addClass('night-sky');
+    addStars();
+    addTwinkleEffectToRandomStars();
+}
+
+function addStars() {
     var numberOfStars = 1000;
     for (var i = 0; i < numberOfStars; i++) {
         var star = $("<div class='star-five-container'><div class='star-five'></div></div>");
@@ -50,4 +56,11 @@ function getRandomNumber(maxNumber) {
     return Math.floor(Math.random() * maxNumber)
 }
 
-
+function addTwinkleEffectToRandomStars() {
+    var numberStarsToTwinkle = 100;
+    var starContainers = $('.star-five-container');
+    for (var i = 0; i < numberStarsToTwinkle; i++) {
+        var randomStar = starContainers[getRandomNumber(numberStarsToTwinkle)];
+        $(randomStar).addClass('star-five-twinkle');
+    }
+}
