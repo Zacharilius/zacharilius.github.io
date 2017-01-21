@@ -6,10 +6,6 @@ body {
     margin: 0 auto;
 }
 
-body.night-sky {
-    background-color: #121212;
-}
-
 /*
  * Handles desktop screens
  */
@@ -45,6 +41,18 @@ body.night-sky {
         position: absolute;
         left: -18%;
         bottom: 0px;
+    }
+
+    .title-container {
+        margin-top: 36px;
+    }
+
+    .title-container h1 {
+        font-size: 40px;
+    }
+
+    .title-container sub-title {
+        font-size: 26px;
     }
 }
 
@@ -263,4 +271,17 @@ body.night-sky {
     -ms-transform:     rotate(-70deg);
     -o-transform:      rotate(-70deg);
     content: '';
+}
+
+/* Night Sky */
+
+body.night-sky {
+    background-color: #232323;
+}
+
+@media screen and (max-width: 1024px) {
+    body.night-sky .mdl-layout__drawer-button {
+        margin: 4px;
+        color: #EEEEEE;
+    }
 }
