@@ -18,7 +18,7 @@ function setPortfolioContainerHeight() {
 
 function setupSky() {
     var currentHoursInDay = getHoursOfDay();
-    var dayBreakHour = 6;  // TODO: Use real data
+    var dayBreakHour = 7;  // TODO: Use real data
     var nightTimeHour = 18;  // TODO: Use real data
     if (currentHoursInDay >= dayBreakHour && currentHoursInDay <= nightTimeHour) {
         setupDay();
@@ -43,7 +43,7 @@ function setupNight() {
 }
 
 function addStars() {
-    var numberOfStars = 1000;
+    var numberOfStars = 250;
     for (var i = 0; i < numberOfStars; i++) {
         var star = $("<div class='star-five-container'><div class='star-five'></div></div>");
         star.css('top', getRandomNumber($(window).height()));
@@ -57,7 +57,7 @@ function getRandomNumber(maxNumber) {
 }
 
 function addTwinkleEffectToRandomStars() {
-    var numberStarsToTwinkle = 100;
+    var numberStarsToTwinkle = 50;
     var starContainers = $('.star-five-container');
     for (var i = 0; i < numberStarsToTwinkle; i++) {
         var randomStar = starContainers[getRandomNumber(numberStarsToTwinkle)];
