@@ -39,6 +39,7 @@
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Zachary Bensley</span>
     <nav class="mdl-navigation nav-drawer">
+      <a class="mdl-navigation__link" href="/">Home</a>
       {% for my_page in site.pages %}
         {% if my_page.title %}
           <a class="mdl-navigation__link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
