@@ -1,0 +1,22 @@
+.icon {
+    padding: 0px;
+}
+
+.icon svg path {
+    fill: rgb(0,150,136);
+}
+
+.icon-heroku img {
+    height: 36px;
+    width: auto;
+}
+
+.icon-github {
+    min-width: 36px;
+    height: 36px;
+}
+
+.icon-github svg {
+    width: 36px;
+    height: 36px;
+}
