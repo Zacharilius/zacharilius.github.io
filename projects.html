@@ -7,35 +7,85 @@ page_css: projects.css
 page_js: projects.js
 ---
 
-<div class="mdl-grid">
-  <div id="" class="mdl-cell mdl-cell--4-col mdl-shadow--2dp">
-    <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text">Map Together</h2>
-    </div>
-    <div class="mdl-card__supporting-text">
-      A GIS application in Django that syncs maps changes in real time.
-    </div>
-    <div class="mdl-card__actions mdl-card--border">
-      <a href="https://map-together.herokuapp.com/" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon icon-heroku">
-        <img src="/images/heroku_logo.png" />
-      </a>
-      <a href="https://github.com/zacharilius/map_together" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon icon-github">
-        {% include icon-github.svg %}
-      </a>
-    </div>
+<div class="mdl-grid project-container">
+  <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+      <div class="mdl-card__media">
+          <img class="article-image" src="/images/map_room_screenshot.jpg" border="0" alt="Map room screenshot">
+      </div>
+      <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">MapTogether</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        A GIS Web application written in Django. Users can create maps and
+        save point, line, and polygon data. All changes to the map are
+        synchronized across all web page viewers in real-time.
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a href="https://map-together.herokuapp.com/" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon icon-heroku">
+          <img src="/images/heroku_logo.png" />
+        </a>
+        <a href="https://github.com/zacharilius/map_together" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon icon-github">
+          {% include icon-github.svg %}
+        </a>
+      </div>
   </div>
-  <div id="" class="mdl-cell mdl-cell--4-col mdl-shadow--2dp">
-    <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text">Zombie Escape</h2>
-    </div>
-    <div class="mdl-card__supporting-text">
-      A top down game that you play as a zombie who tries to eat as many brains
-      as possible before one of the Van Helsing daughters finds and kills him.
-    </div>
-    <div class="mdl-card__actions mdl-card--border">
-      <a href="https://github.com/zacharilius/zombie_escape" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon icon-github">
-        {% include icon-github.svg %}
-      </a>
-    </div>
+
+  <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+      <div class="mdl-card__media">
+          <img class="article-image" src="/images/zombie_escape_screenshot.jpg" border="0" alt="Map room screenshot">
+      </div>
+      <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">Zombie Escape</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        A top down game written in PyGame that you play as a zombie who tries to eat as many brains
+        as possible before one of Van Helsing daughters finds and kills you.</div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a href="https://github.com/Zacharilius/zombie_escape" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon icon-github">
+          {% include icon-github.svg %}
+        </a>
+      </div>
+  </div>
+
+  <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+      <div class="mdl-card__media">
+          <img class="article-image" src="/images/forget_me_knot.png" border="0" alt="Map room screenshot">
+      </div>
+      <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">Forget-Me-Knot</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        Forget-Me-Knot is a RESTful MEAN Stack web application. Users can create
+        reminders and then Forget-Me-Knot notifies user by their preferred message
+        type either email or SMS.
+
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a href="https://github.com/Zacharilius/forget-me-knot" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon icon-github">
+          {% include icon-github.svg %}
+        </a>
+      </div>
+  </div>
+
+  <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+      <div class="mdl-card__media">
+          <img class="article-image" src="/images/william_shakespurr_screenshot.jpg" border="0" alt="Map room screenshot">
+      </div>
+      <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">Shakespurrian Bot</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        A twitter bot written in Python that posts a Shakespeare quote that was
+        translated from English into Cat. Special thanks to
+        http://kittify.herokuapp.com/ for the English to Cat translations.
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a href="https://github.com/Zacharilius/shakespurrean-twitter-bot" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon icon-github">
+          {% include icon-github.svg %}
+        </a>
+        <a href="https://twitter.com/shakespurrean" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect icon icon-twitter">
+          {% include icon-twitter.svg %}
+        </a>
+      </div>
   </div>
 </div>

@@ -1,10 +1,14 @@
+.project-container {
+    margin-top: 40px;
+    max-width: 900px;
+    width: 100%;
+}
+
 .icon {
     padding: 0px;
 }
 
-.icon svg path {
-    fill: rgb(0,150,136);
-}
+
 
 .icon-heroku img {
     height: 36px;
@@ -16,7 +20,25 @@
     height: 36px;
 }
 
+.icon-github svg path {
+    fill: rgb(0, 0, 0);
+}
+
 .icon-github svg {
     width: 36px;
     height: 36px;
+}
+
+.icon-twitter {
+    min-width: 36px;
+    height: 36px;
+}
+
+.icon-twitter svg {
+    width: 36px;
+    height: 36px;
+}
+
+.icon-twitter svg path {
+    fill: rgb(0, 132, 180);
 }
