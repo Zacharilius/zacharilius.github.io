@@ -6,20 +6,117 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 06 Apr 2017 19:06:42 -0700</pubDate>
-    <lastBuildDate>Thu, 06 Apr 2017 19:06:42 -0700</lastBuildDate>
+    <pubDate>Tue, 11 Apr 2017 06:43:48 -0700</pubDate>
+    <lastBuildDate>Tue, 11 Apr 2017 06:43:48 -0700</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
+        <title>Converting Shapefiles to GeoJson</title>
+        <description>&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;I love to to make maps on the webbut finding GeoJson data to make maps is somewhat difficult.
+Typically, most geographic data is stored in Shapefiles. In order to create web maps,
+we need data stored in GeoJson files. This blog post will show how to convert
+your Shapefiles to GeoJson.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-a-shapefile&quot;&gt;What is a Shapefile&lt;/h2&gt;
+&lt;p&gt;A Shapefile is a type of file that stores geospatial vector data (points, lines,
+and polygons). Esri, the world’s largest geospatial software company owns and regulates
+the specifications for Shapefiles. Esri created Shapefiels to be used in their
+Desktop GIS application.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-geojson&quot;&gt;What is GeoJson&lt;/h2&gt;
+&lt;p&gt;First off JSON stands for JavaScript Object Notation. Similarly to shapefiles, GeoJson
+stores geospatial vector data format. However, instead of being controlled by a company,
+it’s regulated by Internet Engineering Task Force (IETF) and designed to be used in web mapping.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Feature&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;geometry&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Point&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;coordinates&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;123.0781&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;48.5514&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;San Juan Island&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The above GeoJson examples stores the location of the San Juan Islands.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-convert&quot;&gt;How to Convert&lt;/h2&gt;
+
+&lt;p&gt;We will be using ogr2ogr command line tool to convert our Shapefile to GeoJSON.
+The ogr2ogr tool is part of the Geospatial Data Abstraction Library (GDAL).&lt;/p&gt;
+
+&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
+
+&lt;h4 id=&quot;mac&quot;&gt;Mac&lt;/h4&gt;
+&lt;p&gt;Open terminal&lt;/p&gt;
+
+&lt;p&gt;Install Homebrew if you haven’t installed it. There are many online tutorials for
+installing Homebrew.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew install gdal --HEAD
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;linux&quot;&gt;Linux&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo apt-get install python-gdal
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;check-that-you-have-gdal-properly-installed&quot;&gt;Check that you have gdal properly installed&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ogr2ogr --version
+GDAL 1.11.5, released 2016/07/01
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Your &lt;em&gt;released&lt;/em&gt; date will probably be different than mine but what’s important is
+that it has &lt;em&gt;GDAL&lt;/em&gt; and then a release number.&lt;/p&gt;
+
+&lt;h3 id=&quot;sample-command&quot;&gt;Sample Command&lt;/h3&gt;
+&lt;p&gt;Now that we’ve confirmed the ogr2ogr command is installed on our machines. We’re
+ready to convert our shapefile into GeoJson.&lt;/p&gt;
+
+&lt;p&gt;If you don’t have a shapefile, download my &lt;a href=&quot;/static/blog/SanJuanIslandShapefile.zip&quot; download=&quot;SanJuanIslandShapefile&quot;&gt;sample shapefile&lt;/a&gt;
+and unzip it. Inside you will find a folder with 4 files that together make a shapefile. Move the
+SanJuanIslandShapefile folder to your Desktop.&lt;/p&gt;
+
+&lt;p&gt;Navigate to your desktop and inside SanJuanIslandShapefile&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Desktop/SanJuanIslandShapefile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now run the ogr2ogr command to convert our shapefile to GeoJson.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ogr2ogr -f GeoJSON -t_srs crs:84 SanJuanIsland.geojson SanJuanIsland.shp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You have now created your SanJuanIsland.geojson file on the desktop. Congrats!&lt;/p&gt;
+
+&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
+</description>
+        <pubDate>Mon, 10 Apr 2017 08:34:07 -0700</pubDate>
+        <link>http://localhost:4000/maps/2017/04/10/converting-shapefiles-to-geojson.html</link>
+        <guid isPermaLink="true">http://localhost:4000/maps/2017/04/10/converting-shapefiles-to-geojson.html</guid>
+        
+        
+        <category>Maps</category>
+        
+      </item>
+    
+      <item>
         <title>My first post</title>
-        <description>&lt;p&gt;Hello everyone! My name is Zachary Bensley and I’m a full stack web developer. 
-Thanks for reading my first blog posting. Sorry, it’s just an intro post. I’ll 
-do my best to have a real post soon. I’m planning to use this blog to share my 
+        <description>&lt;p&gt;Hello everyone! My name is Zachary Bensley and I’m a full stack web developer.
+Thanks for reading my first blog posting. Sorry, it’s just an intro post. I’ll
+do my best to have a real post soon. I’m planning to use this blog to share my
 ideas and discuss current projects.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 07 May 2016 15:34:07 -0700</pubDate>
-        <link>http://localhost:4000/introduction/2016/05/07/my-first-post.html</link>
-        <guid isPermaLink="true">http://localhost:4000/introduction/2016/05/07/my-first-post.html</guid>
+        <pubDate>Mon, 27 Mar 2017 15:34:07 -0700</pubDate>
+        <link>http://localhost:4000/introduction/2017/03/27/my-first-post.html</link>
+        <guid isPermaLink="true">http://localhost:4000/introduction/2017/03/27/my-first-post.html</guid>
         
         
         <category>introduction</category>
