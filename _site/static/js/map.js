@@ -8,7 +8,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1IjoiemFjaGFyaWxpdXMiLCJhIjoiY2luemR3cmlyMTh6M3U4a2pmb3ZtZnZyMSJ9.Q1CwCauCwWmQd7t-Z8S8qQ'
 }).addTo(map);
 
-$.getJSON('/js/seattle_parks_rec.json', function (data) {
+$.getJSON('/static/js/seattle_parks_rec.geojson', function (data) {
     // Define the geojson layer and add it to the map
 	var geojsonMarkerOptions = {
 	    radius: 3,
