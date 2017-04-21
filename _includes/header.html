@@ -21,17 +21,17 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Right Navigation -->
       <nav class="mdl-navigation nav-top">
-        <a class="mdl-navigation__link nav-github" href="http://www.github.com/zacharilius">
-          {% include icon-github.html username=site.github_username %}
+        <a class="mdl-navigation__link nav-github" href="https://github.com/{{ site.github_username }}">
+          <span class="icon icon--github">{% include icon-github.svg %}</span>
         </a>
-        <a class="mdl-navigation__link nav-codepen" href="http://codepen.io/zacharilius/">
-          {% include icon-codepen.html username=site.codepen_username %}
+        <a class="mdl-navigation__link nav-codepen" href="http://codepen.io/{{ site.codepen_username }}">
+          <span class="icon icon--codepen">{% include icon-codepen.svg %}</span>
         </a>
-        <a class="mdl-navigation__link nav-linkedin" href="https://www.linkedin.com/in/zabensley">
-            {% include icon-linkedin.html username=site.linkedin_username %}
+        <a class="mdl-navigation__link nav-codepen" href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+          <span class="icon icon--linkedin">{% include icon-linkedin.svg %}</span>
         </a>
-        <a class="mdl-navigation__link nav-instagram" href="https://instagram.com/zacharilius/">
-          {% include icon-instagram.html username=site.instagram_username %}
+        <a class="mdl-navigation__link nav-codepen" href="https://instagram.com/{{ site.instagram_username }}">
+          <span class="icon icon--instagram">{% include icon-instagram.svg %}</span>
         </a>
       </nav>
     </div>
@@ -45,17 +45,17 @@
           <a class="mdl-navigation__link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
         {% endif %}
       {% endfor %}
-      <a class="mdl-navigation__link" href="http://www.github.com/zacharilius">
-        {% include icon-github.html username=site.github_username %}
+      <a class="mdl-navigation__link nav-github" href="https://github.com/{{ site.github_username }}">
+        <span class="icon icon--github">{% include icon-github.svg %}</span>
       </a>
-      <a class="mdl-navigation__link" href="http://codepen.io/zacharilius/">
-        {% include icon-codepen.html username=site.codepen_username %}
+      <a class="mdl-navigation__link nav-codepen" href="http://codepen.io/{{ site.codepen_username }}">
+        <span class="icon icon--codepen">{% include icon-codepen.svg %}</span>
       </a>
-      <a class="mdl-navigation__link" href="https://www.linkedin.com/in/zabensley">
-          {% include icon-linkedin.html username=site.linkedin_username %}
+      <a class="mdl-navigation__link nav-codepen" href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+        <span class="icon icon--linkedin">{% include icon-linkedin.svg %}</span>
       </a>
-      <a class="mdl-navigation__link" href="https://instagram.com/zacharilius/">
-        {% include icon-instagram.html username=site.instagram_username %}
+      <a class="mdl-navigation__link nav-codepen" href="https://instagram.com/{{ site.instagram_username }}">
+        <span class="icon icon--instagram">{% include icon-instagram.svg %}</span>
       </a>
     </nav>
   </div>

@@ -45,7 +45,11 @@ $on-laptop:        800px;
     }
 }
 
+// Navigation
 
+.mdl-layout__drawer .mdl-navigation__link svg path {
+    fill: #e0e0e0;
+}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import

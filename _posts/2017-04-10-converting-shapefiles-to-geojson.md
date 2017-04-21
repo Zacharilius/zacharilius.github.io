@@ -8,7 +8,7 @@ page_js: blog_converting_shapefiles_to_geojson.js
 ---
 
 ## Intro
-I love to to make maps on the webbut finding GeoJson data to make maps is somewhat difficult.
+I love to to make maps on the web but finding Geojson data can be difficult.
 Typically, most geographic data is stored in Shapefiles. In order to create web maps,
 we need data stored in GeoJson files. This blog post will show how to convert
 your Shapefiles to GeoJson.
@@ -69,8 +69,8 @@ $ ogr2ogr --version
 GDAL 1.11.5, released 2016/07/01
 ````
 
-Your *released* date will probably be different than mine but what's important is
-that it has *GDAL* and then a release number.
+Your **released** date will probably be different than mine but what's important is
+that it says **GDAL** and then a release number.
 
 ### Sample Command
 Now that we've confirmed the ogr2ogr command is installed on our machines. We're

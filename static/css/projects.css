@@ -8,7 +8,10 @@
     padding: 0px;
 }
 
-
+.portfolio-card .mdl-card__media {
+    background-color: #fff;
+    height: 190px;
+}
 
 .icon-heroku img {
     height: 36px;
