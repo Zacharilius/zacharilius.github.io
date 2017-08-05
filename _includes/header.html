@@ -9,7 +9,7 @@
       <!-- Left Navigation -->
       <nav class="mdl-navigation">
         {% for my_page in site.pages %}
-          {% if my_page.title %}
+          {% if my_page.title and my_page.group == "navigation" %}
             {% if my_page.url == page.url %}
               <a class="mdl-navigation__link is-active " href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
             {% else %}
