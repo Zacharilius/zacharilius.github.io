@@ -25,6 +25,10 @@ function summarizeData(data) {
     var deanaPoints = data[0].slice(1).map(strToNumb);
     var zachPoints = data[1].slice(1).map(strToNumb);
 
+    addStatsToSummaryTable(deanaPoints, zachPoints)
+}
+
+function addStatsToSummaryTable(deanaPoints, zachPoints) {
     if (deanaPoints.length != zachPoints.length) {
         throw Exception('Unequal number of points between Zach and Deana')
     }
@@ -53,9 +57,9 @@ function summarizeData(data) {
     var deanaAveragePointsPerTrick = deanaTotalPoints / numberTricks;
     var zachAveragePointsPerTrick = zachTotalPoints / numberTricks;
     var averagePointsPerTrick = totalPoints / numberTricks;
-    $('#z-avg-points-per-trick').text(zachAveragePointsPerTrick);
-    $('#d-avg-points-per-trick').text(deanaAveragePointsPerTrick);
-    $('#avg-points-per-trick').text(averagePointsPerTrick);
+    $('#z-avg-points-per-trick').text(removeDecimals(zachAveragePointsPerTrick));
+    $('#d-avg-points-per-trick').text(removeDecimals(deanaAveragePointsPerTrick));
+    $('#avg-points-per-trick').text(removeDecimals(averagePointsPerTrick));
 
 
     // Number tricks won
@@ -86,4 +90,8 @@ function getSum(total, num) {
 
 function strToNumb(strNum) {
     return Number(strNum);
+}
+
+function removeDecimals(num) {
+    return num.toFixed(0);
 }
