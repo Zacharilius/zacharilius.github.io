@@ -4,9 +4,9 @@ $(function() {
 
 function setupRummyPage() {
     if (isOnTest() && hasTestData()) {
-        setupWithTestData();
+        updateData(getTestData());
     } else {
-        requestRummySheet()
+        requestRummySheetThenUpdateData()
     }
 }
 
@@ -35,14 +35,20 @@ function getTestData() {
     return [deanaData, zachData];
 }
 
-function setupWithTestData() {
-    summarizeData(getTestData());
+function updateData(data) {
+    // Deana is column 1 and Zach is column 2
+    var deanaPoints = data[0].slice(1).map(strToNumb);
+    var zachPoints = data[1].slice(1).map(strToNumb);
+
+    addStatsToSummaryTable(deanaPoints, zachPoints);
+    createTrickWinnerChart(deanaPoints, zachPoints);
 }
 
-function requestRummySheet() {
-    console.log('doing ajax');
+function requestRummySheetThenUpdateData() {
+    var sheetId = '1JLgZTyHQik5-uuGCzopzoSlPZT1H4DrMQ1ffyKn6hl4;';
+    var key = 'AIzaSyAjyEK1arxq4pI7nR1suahUDVL-4SLxYnw';
     $.ajax({
-        url: 'https://sheets.googleapis.com/v4/spreadsheets/1JLgZTyHQik5-uuGCzopzoSlPZT1H4DrMQ1ffyKn6hl4/values/Sheet1!A:D?key=AIzaSyAjyEK1arxq4pI7nR1suahUDVL-4SLxYnw&majorDimension=COLUMNS',
+        url: 'https://sheets.googleapis.com/v4/spreadsheets/'+sheetId+'/values/Sheet1!A:D?key='+key+'&majorDimension=COLUMNS',
         type: 'GET',
         dataType: 'jsonp',
     }).done(function(data) {
@@ -50,20 +56,11 @@ function requestRummySheet() {
         if (isOnTest()) {
             window.localStorage['testData'] = data.values;
         }
-        summarizeData(data.values);
+        updateData(data.values);
     }).fail(function(error) {
         console.error(error);
         // TODO: Display error message when an error occurs
     });
-}
-
-function summarizeData(data) {
-    // Deana is column 1 and Zach is column 2
-    var deanaPoints = data[0].slice(1).map(strToNumb);
-    var zachPoints = data[1].slice(1).map(strToNumb);
-
-    addStatsToSummaryTable(deanaPoints, zachPoints);
-    createCurrentWinnerChart(deanaPoints, zachPoints);
 }
 
 function addStatsToSummaryTable(deanaPoints, zachPoints) {
@@ -132,4 +129,68 @@ function strToNumb(strNum) {
 
 function removeDecimals(num) {
     return num.toFixed(0);
+}
+
+// Charts
+
+function createTrickWinnerChart(deanaPoints, zachPoints) {
+    var margin = {top: 20, right: 20, bottom: 30, left: 50},
+        width = 960 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+
+    // Set the ranges
+    var x = d3.scaleLinear().range([0, width]);
+    var y = d3.scaleLinear().range([height, 0]);
+
+    var deanaLine = d3.line()
+        .x(function(d) { return x(d.trickIndex); })
+        .y(function(d) { return y(d.dScore); });
+
+    var zachLine = d3.line()
+        .x(function(d) { return x(d.trickIndex); })
+        .y(function(d) { return y(d.zScore); });
+
+    // Find the svg object to the body of the page
+    // appends a 'group' element to 'svg'
+    // moves the 'group' element to the top left margin
+    var svg = d3.select('#trick-winner-chart-container svg')
+        .attr('width', width + margin.left + margin.right)
+        .attr('height', height + margin.top + margin.bottom)
+      .append('g')
+        .attr('transform',
+              'translate(' + margin.left + ',' + margin.top + ')');
+
+    // Format the data
+    var data  = deanaPoints.map(function(dScore, index) {
+        return {'trickIndex': index, 'dScore': dScore, 'zScore': zachPoints[index]};
+    });
+
+    // Scale the range of the data
+    x.domain(d3.extent(data, function(d) { return d.trickIndex; }));
+    y.domain(
+        [d3.min(data, function(d) {return Math.min(d.dScore, d.zScore); }),
+        d3.max(data, function(d) {return Math.max(d.dScore, d.zScore); })]);
+
+    // Add the deanaLine path.
+    svg.append('path')
+        .data([data])
+        .attr('class', 'line')
+        .style('stroke', 'green')
+        .attr('d', deanaLine);
+
+    // Add the zachLine path.
+    svg.append('path')
+        .data([data])
+        .attr('class', 'line')
+        .style('stroke', 'red')
+        .attr('d', zachLine);
+
+    // Add the X Axis
+    svg.append('g')
+        .attr('transform', 'translate(0,' + height + ')')
+        .call(d3.axisBottom(x));
+
+    // Add the Y Axis
+    svg.append('g')
+        .call(d3.axisLeft(y));
 }

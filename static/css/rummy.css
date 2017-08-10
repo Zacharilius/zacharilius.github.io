@@ -16,3 +16,44 @@
 #winner-stats-container table {
     margin: 0 auto;
 }
+
+/* Charts */
+
+#chart-container {
+    border-top: 1px solid #aaaaaa;
+    margin-top: 60px;
+    padding-top: 60px;
+}
+
+.chart-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.chart-legend {
+    display: table;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: left
+}
+
+.legend-square {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    margin-right: 25px;
+}
+
+.legend-deana {
+    border-bottom: 3px solid green;
+}
+
+.legend-zach {
+    border-bottom: 3px solid red;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
