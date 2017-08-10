@@ -3,17 +3,54 @@ $(function() {
 });
 
 function setupRummyPage() {
-    requestRummySheet()
+    if (isOnTest() && hasTestData()) {
+        setupWithTestData();
+    } else {
+        requestRummySheet()
+    }
+}
+
+function isOnTest() {
+    return 'http://127.0.0.1:4000'.indexOf(window.location.origin) != -1;
+}
+
+function hasTestData() {
+    return window.localStorage['testData'] !== undefined;
+}
+
+function getTestData() {
+    var testData = window.localStorage['testData'].split(',');
+    var deanaIndex = -1;
+    var zachIndex = -1;
+    for (var i = 0; i < testData.length; i++) {
+        if (testData[i] == 'Deana') {
+            deanaIndex = i;
+        } else if (testData[i] == 'Zach') {
+            zachIndex = i;
+        }
+    }
+    var deanaData = testData.splice(deanaIndex, zachIndex);
+    var zachData = testData.splice(0, zachIndex);
+
+    return [deanaData, zachData];
+}
+
+function setupWithTestData() {
+    summarizeData(getTestData());
 }
 
 function requestRummySheet() {
+    console.log('doing ajax');
     $.ajax({
         url: 'https://sheets.googleapis.com/v4/spreadsheets/1JLgZTyHQik5-uuGCzopzoSlPZT1H4DrMQ1ffyKn6hl4/values/Sheet1!A:D?key=AIzaSyAjyEK1arxq4pI7nR1suahUDVL-4SLxYnw&majorDimension=COLUMNS',
         type: 'GET',
         dataType: 'jsonp',
     }).done(function(data) {
-        window.rummyData = data;
-        summarizeData(data.values)
+        // Save in local storage to allow testing offline;
+        if (isOnTest()) {
+            window.localStorage['testData'] = data.values;
+        }
+        summarizeData(data.values);
     }).fail(function(error) {
         console.error(error);
         // TODO: Display error message when an error occurs
@@ -25,7 +62,8 @@ function summarizeData(data) {
     var deanaPoints = data[0].slice(1).map(strToNumb);
     var zachPoints = data[1].slice(1).map(strToNumb);
 
-    addStatsToSummaryTable(deanaPoints, zachPoints)
+    addStatsToSummaryTable(deanaPoints, zachPoints);
+    createCurrentWinnerChart(deanaPoints, zachPoints);
 }
 
 function addStatsToSummaryTable(deanaPoints, zachPoints) {
