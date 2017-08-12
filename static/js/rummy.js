@@ -42,6 +42,7 @@ function updateData(data) {
 
     addStatsToSummaryTable(deanaPoints, zachPoints);
     createTrickWinnerChart(deanaPoints, zachPoints);
+    createCumulativeWinnerChart(deanaPoints, zachPoints);
 }
 
 function requestRummySheetThenUpdateData() {
@@ -115,8 +116,6 @@ function addStatsToSummaryTable(deanaPoints, zachPoints) {
     $('#num-tricks-won').text(numberOfTricksDeanaWon + numberOfTricksZachWon);
 
     // Longest winning streak
-
-    // Line graph of current winner for each trick.
 }
 
 function getSum(total, num) {
@@ -134,8 +133,9 @@ function removeDecimals(num) {
 // Charts
 
 function createTrickWinnerChart(deanaPoints, zachPoints) {
+    var windowWidth = window.innerWidth * .90;
     var margin = {top: 20, right: 20, bottom: 30, left: 50},
-        width = 960 - margin.left - margin.right,
+        width = windowWidth - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
     // Set the ranges
@@ -170,6 +170,75 @@ function createTrickWinnerChart(deanaPoints, zachPoints) {
     y.domain(
         [d3.min(data, function(d) {return Math.min(d.dScore, d.zScore); }),
         d3.max(data, function(d) {return Math.max(d.dScore, d.zScore); })]);
+
+    // Add the deanaLine path.
+    svg.append('path')
+        .data([data])
+        .attr('class', 'line')
+        .style('stroke', 'green')
+        .attr('d', deanaLine);
+
+    // Add the zachLine path.
+    svg.append('path')
+        .data([data])
+        .attr('class', 'line')
+        .style('stroke', 'red')
+        .attr('d', zachLine);
+
+    // Add the X Axis
+    svg.append('g')
+        .attr('transform', 'translate(0,' + height + ')')
+        .call(d3.axisBottom(x));
+
+    // Add the Y Axis
+    svg.append('g')
+        .call(d3.axisLeft(y));
+}
+
+function createCumulativeWinnerChart(deanaPoints, zachPoints) {
+    var windowWidth = window.innerWidth * .90;
+    var margin = {top: 20, right: 20, bottom: 30, left: 50},
+        width = windowWidth - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+
+    console.log(window.innerWidth - 100 - margin.left - margin.right);
+
+    // Set the ranges
+    var x = d3.scaleLinear().range([0, width]);
+    var y = d3.scaleLinear().range([height, 0]);
+
+    var deanaLine = d3.line()
+        .x(function(d) { return x(d.trickIndex); })
+        .y(function(d) { return y(d.dCumulativeScore); });
+
+    var zachLine = d3.line()
+        .x(function(d) { return x(d.trickIndex); })
+        .y(function(d) { return y(d.zCumulativeScore); });
+
+    // Find the svg object to the body of the page
+    // appends a 'group' element to 'svg'
+    // moves the 'group' element to the top left margin
+    var svg = d3.select('#cumulative-winner-chart-container svg')
+        .attr('width', width + margin.left + margin.right)
+        .attr('height', height + margin.top + margin.bottom)
+      .append('g')
+        .attr('transform',
+              'translate(' + margin.left + ',' + margin.top + ')');
+
+    // Format the data
+    var dCumulativeScore = 0;
+    var zCumulativeScore = 0;
+    var data = deanaPoints.map(function(dScore, index) {
+        dCumulativeScore += dScore;
+        zCumulativeScore += zachPoints[index];
+        return {'trickIndex': index, 'dCumulativeScore': dCumulativeScore, 'zCumulativeScore': zCumulativeScore};
+    });
+
+    // Scale the range of the data
+    x.domain(d3.extent(data, function(d) { return d.trickIndex; }));
+    y.domain(
+        [d3.min(data, function(d) {return Math.min(d.dCumulativeScore, d.zCumulativeScore); }),
+        d3.max(data, function(d) {return Math.max(d.dCumulativeScore, d.zCumulativeScore); })]);
 
     // Add the deanaLine path.
     svg.append('path')
