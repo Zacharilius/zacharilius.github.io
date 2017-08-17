@@ -130,13 +130,12 @@ function removeDecimals(num) {
     return num.toFixed(0);
 }
 
-// Charts
+/* ==== Charts ==== */
 
 function createTrickWinnerChart(deanaPoints, zachPoints) {
-    var windowWidth = window.innerWidth * .90;
-    var margin = {top: 20, right: 20, bottom: 30, left: 50},
-        width = windowWidth - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+    var margin = window.CHART_MARGIN,
+        width = window.CHART_WIDTH
+        height = window.CHART_HEIGHT
 
     // Set the ranges
     var x = d3.scaleLinear().range([0, width]);
@@ -150,9 +149,6 @@ function createTrickWinnerChart(deanaPoints, zachPoints) {
         .x(function(d) { return x(d.trickIndex); })
         .y(function(d) { return y(d.zScore); });
 
-    // Find the svg object to the body of the page
-    // appends a 'group' element to 'svg'
-    // moves the 'group' element to the top left margin
     var svg = d3.select('#trick-winner-chart-container svg')
         .attr('width', width + margin.left + margin.right)
         .attr('height', height + margin.top + margin.bottom)
@@ -175,33 +171,43 @@ function createTrickWinnerChart(deanaPoints, zachPoints) {
     svg.append('path')
         .data([data])
         .attr('class', 'line')
-        .style('stroke', 'green')
+        .style('stroke', '#FC4A1A')
         .attr('d', deanaLine);
 
     // Add the zachLine path.
     svg.append('path')
         .data([data])
         .attr('class', 'line')
-        .style('stroke', 'red')
+        .style('stroke', '#037584')
         .attr('d', zachLine);
 
     // Add the X Axis
     svg.append('g')
         .attr('transform', 'translate(0,' + height + ')')
         .call(d3.axisBottom(x));
+    svg.append("text")
+        .attr("transform",
+            "translate(" + (width / 2) + " ," +
+                           (height + margin.top + 10) + ")")
+        .style("text-anchor", "middle")
+        .text("Trick number");
 
     // Add the Y Axis
     svg.append('g')
         .call(d3.axisLeft(y));
+    svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left - 5)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Points");
 }
 
 function createCumulativeWinnerChart(deanaPoints, zachPoints) {
-    var windowWidth = window.innerWidth * .90;
-    var margin = {top: 20, right: 20, bottom: 30, left: 50},
-        width = windowWidth - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
-
-    console.log(window.innerWidth - 100 - margin.left - margin.right);
+    var margin = window.CHART_MARGIN,
+        width = window.CHART_WIDTH
+        height = window.CHART_HEIGHT
 
     // Set the ranges
     var x = d3.scaleLinear().range([0, width]);
@@ -215,9 +221,6 @@ function createCumulativeWinnerChart(deanaPoints, zachPoints) {
         .x(function(d) { return x(d.trickIndex); })
         .y(function(d) { return y(d.zCumulativeScore); });
 
-    // Find the svg object to the body of the page
-    // appends a 'group' element to 'svg'
-    // moves the 'group' element to the top left margin
     var svg = d3.select('#cumulative-winner-chart-container svg')
         .attr('width', width + margin.left + margin.right)
         .attr('height', height + margin.top + margin.bottom)
@@ -244,22 +247,41 @@ function createCumulativeWinnerChart(deanaPoints, zachPoints) {
     svg.append('path')
         .data([data])
         .attr('class', 'line')
-        .style('stroke', 'green')
+        .style('stroke', '#FC4A1A')
         .attr('d', deanaLine);
 
     // Add the zachLine path.
     svg.append('path')
         .data([data])
         .attr('class', 'line')
-        .style('stroke', 'red')
+        .style('stroke', '#037584')
         .attr('d', zachLine);
 
     // Add the X Axis
     svg.append('g')
         .attr('transform', 'translate(0,' + height + ')')
         .call(d3.axisBottom(x));
+    svg.append("text")
+        .attr("transform",
+            "translate(" + (width / 2) + " ," +
+                           (height + margin.top + 10) + ")")
+        .style("text-anchor", "middle")
+        .text("Trick number");
 
     // Add the Y Axis
     svg.append('g')
         .call(d3.axisLeft(y));
+    svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left - 5)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Points");
 }
+
+/* ==== Chart Util ==== */
+
+var CHART_MARGIN = {top: 20, right: 20, bottom: 30, left: 50};
+var CHART_WIDTH = (window.innerWidth * .90) - window.CHART_MARGIN.left - window.CHART_MARGIN.right;
+var CHART_HEIGHT = 500 - window.CHART_MARGIN.top - window.CHART_MARGIN.bottom;
