@@ -46,7 +46,7 @@ function updateData(data) {
 }
 
 function requestRummySheetThenUpdateData() {
-    var sheetId = '1JLgZTyHQik5-uuGCzopzoSlPZT1H4DrMQ1ffyKn6hl4;';
+    var sheetId = '1JLgZTyHQik5-uuGCzopzoSlPZT1H4DrMQ1ffyKn6hl4';
     var key = 'AIzaSyAjyEK1arxq4pI7nR1suahUDVL-4SLxYnw';
     $.ajax({
         url: 'https://sheets.googleapis.com/v4/spreadsheets/'+sheetId+'/values/Sheet1!A:D?key='+key+'&majorDimension=COLUMNS',
