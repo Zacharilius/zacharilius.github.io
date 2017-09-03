@@ -8,12 +8,12 @@
     <div class="mdl-layout__header-row">
       <!-- Left Navigation -->
       <nav class="mdl-navigation">
-        {% for my_page in site.pages %}
-          {% if my_page.title and my_page.group == "navigation" %}
-            {% if my_page.url == page.url %}
-              <a class="mdl-navigation__link is-active " href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+        {% for this_page in site.pages %}
+          {% if this_page.title and this_page.group == "navigation" %}
+            {% if this_page.url == page.url %}
+              <a class="mdl-navigation__link is-active " href="{{ this_page.url | prepend: site.baseurl }}">{{ this_page.title }}</a>
             {% else %}
-              <a class="mdl-navigation__link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+              <a class="mdl-navigation__link" href="{{ this_page.url | prepend: site.baseurl }}">{{ this_page.title }}</a>
             {% endif %}
           {% endif %}
         {% endfor %}
@@ -40,9 +40,9 @@
     <span class="mdl-layout-title">Zachary Bensley</span>
     <nav class="mdl-navigation nav-drawer">
       <a class="mdl-navigation__link" href="/">Home</a>
-      {% for my_page in site.pages %}
-        {% if my_page.title %}
-          <a class="mdl-navigation__link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+      {% for this_page in site.pages %}
+        {% if this_page.title and this_page.group == "navigation" %}
+          <a class="mdl-navigation__link" href="{{ this_page.url | prepend: site.baseurl }}">{{ this_page.title }}</a>
         {% endif %}
       {% endfor %}
       <a class="mdl-navigation__link nav-github" href="https://github.com/{{ site.github_username }}">

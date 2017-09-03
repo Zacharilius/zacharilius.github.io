@@ -54,7 +54,7 @@ function requestRummySheetThenUpdateData() {
         dataType: 'jsonp',
     }).done(function(data) {
         // Save in local storage to allow testing offline;
-        if (isOnTest()) {
+        if (isOnTest() && data['error'] != undefined) {
             window.localStorage['testData'] = data.values;
         }
         updateData(data.values);
