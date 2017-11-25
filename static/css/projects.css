@@ -1,7 +1,5 @@
 .project-container {
     margin-top: 40px;
-    max-width: 900px;
-    width: 100%;
 }
 
 .icon {
@@ -10,7 +8,6 @@
 
 .portfolio-card .mdl-card__media {
     background-color: #fff;
-    height: 190px;
 }
 
 .icon-heroku img {

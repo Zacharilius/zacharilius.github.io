@@ -13,6 +13,10 @@
     margin-left: 10px;
 }
 
+#winner-stats-container {
+    overflow-x: auto;
+}
+
 #winner-stats-container table {
     margin: 0 auto;
 }
