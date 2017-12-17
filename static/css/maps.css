@@ -14,11 +14,7 @@ html, body, #map {
 .map-col {
     margin: 20px auto;
     padding: 20px;
-}
-@media (max-width: 839px) {
-    .map-col {
-        height: calc(100vh - 100px);
-    }
+    min-height: calc(100vh - 100px);
 }
 
 .map-col h4 {
@@ -78,4 +74,14 @@ html, body, #map {
 
 .leaflet-popup-content-wrapper .rating-info i {
     vertical-align: top;
+}
+
+#freemont-bridge-datetime {
+    text-align: center;
+}
+
+#freemont-bridge-time-scale {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 400;
 }

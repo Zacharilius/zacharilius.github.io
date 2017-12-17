@@ -1,8 +1,10 @@
 # zacharilius.github.io
 My deployed personal website.
 
-## How to run.
+## Project setup.
 
 sudo gem install jekyll
+
+## How to run.
 
 jekyll serve
