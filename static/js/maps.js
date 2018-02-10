@@ -1,7 +1,8 @@
 window.onload = function(e){
-    setupFreemontHourlyBikeUse();
-    setupRestaurantCleanlinessRatings();
     setupParksBenchMap();
+    setupRestaurantCleanlinessRatings();
+    // Disable until better data can be found.
+    // setupFreemontHourlyBikeUse();
 }
 
 /* ==== Park Benches in Seattle ==== */
