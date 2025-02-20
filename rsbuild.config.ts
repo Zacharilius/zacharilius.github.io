@@ -7,9 +7,4 @@ export default defineConfig({
     title: 'zacharilius.me',
     favicon: './src/assets/favicon.ico',
   },
-  output: {
-    // Please replace <REPO_NAME> with the repository name.
-    // For example, "/my-project/"
-    assetPrefix: '/zacharilius.github.io/',
-  },
 });
