@@ -19,10 +19,15 @@ const navigationItems: NavigationItem[] = [
 ];
 
 const App = () => {
-    const [navHref, setNavHref] = useState(navigationItems[0].href);
+    const [navHref, setNavHref] = useState(getActiveNavItem(window.location.hash).href);
 
-    const getActiveComponent = (navHref: string): any => {
-        return navigationItems.find((navigationItem) => navigationItem.href === navHref)?.component
+    function getActiveNavItem (navHref: string): NavigationItem {
+        const navItem = navigationItems.find((navigationItem) => navigationItem.href === navHref);
+        return navItem ?? navigationItems[0];
+    }
+
+    const getActiveComponent = (navHref: string): React.ReactElement => {
+        return getActiveNavItem(navHref)?.component
     }
 
     return (
