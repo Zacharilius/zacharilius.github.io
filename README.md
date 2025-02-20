@@ -27,3 +27,10 @@ Preview the production build locally:
 ```bash
 npm run preview
 ```
+
+
+# Deploy
+
+git push origin --delete gh-pages
+
+git subtree push --prefix dist origin gh-pages
