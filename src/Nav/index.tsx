@@ -6,11 +6,20 @@ import { NavigationItem } from '../App';
 
 interface NavProps {
   navigationItems: NavigationItem[],
-  setNavHref: React.Dispatch<React.SetStateAction<string>>
+  setNavHref: React.Dispatch<React.SetStateAction<string>>,
+  activeNavHref: string,
 }
 
-export default function Nav({navigationItems, setNavHref}: NavProps) {
+export default function Nav({navigationItems, setNavHref, activeNavHref}: NavProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const getNavItemStyle = (navHref: string) => {
+    if (navHref === activeNavHref) {
+      return {
+        color: '#19A295',
+      }
+    }
+  }
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
@@ -22,6 +31,7 @@ export default function Nav({navigationItems, setNavHref}: NavProps) {
               alt="ZB Logo"
               src={zbImage}
               className="h-8 w-auto"
+              onClick={() => setNavHref(navigationItems[0].href)}
             />
           </a>
         </div>
@@ -37,7 +47,13 @@ export default function Nav({navigationItems, setNavHref}: NavProps) {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigationItems.map((item) => (
-            <a key={item.name} href={item.href} onClick={() => setNavHref(item.href)} className="text-sm/6 font-semibold text-gray-900">
+            <a
+              key={item.name}
+              href={item.href}
+              onClick={() => setNavHref(item.href)}
+              className="text-sm/6 font-semibold text-gray-900"
+              style={getNavItemStyle(item.href)}
+            >
               {item.name}
             </a>
           ))}
@@ -73,6 +89,7 @@ export default function Nav({navigationItems, setNavHref}: NavProps) {
                     href={item.href}
                     onClick={() => setNavHref(item.href)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                    style={getNavItemStyle(item.href)}
                   >
                     {item.name}
                   </a>

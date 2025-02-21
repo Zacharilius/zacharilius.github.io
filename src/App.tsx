@@ -8,7 +8,6 @@ import Resume from './Resume';
 export interface NavigationItem {
     name: string;
     href: string;
-    // TODO: Find better type
     component: React.ReactElement;
 }
 
@@ -19,7 +18,7 @@ const navigationItems: NavigationItem[] = [
 ];
 
 const App = () => {
-    const [navHref, setNavHref] = useState(getActiveNavItem(window.location.hash).href);
+    const [activeNavHref, setActiveNavHref] = useState(getActiveNavItem(window.location.hash).href);
 
     function getActiveNavItem (navHref: string): NavigationItem {
         const navItem = navigationItems.find((navigationItem) => navigationItem.href === navHref);
@@ -34,16 +33,11 @@ const App = () => {
         <div className="bg-white">
             <Nav
                 navigationItems={navigationItems}
-                setNavHref={setNavHref}
+                setNavHref={setActiveNavHref}
+                activeNavHref={activeNavHref}
             />
-            {/* <div>
-            {
-                navigationItems.map(navigationItem => {
-                    return navigationItem.component
-                })
-            }
-            </div> */}
-            { getActiveComponent(navHref) }
+
+            { getActiveComponent(activeNavHref) }
         </div>
     );
 };
