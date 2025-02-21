@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [pluginReact()],
   html: {
     title: 'zacharilius.me',
-    favicon: './src/assets/favicon.ico',
+    favicon: './src/favicon.ico',
   },
 });

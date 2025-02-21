@@ -36,8 +36,9 @@ const App = () => {
                 setNavHref={setActiveNavHref}
                 activeNavHref={activeNavHref}
             />
-
-            { getActiveComponent(activeNavHref) }
+            <div className="container mx-auto p-4 bg-gray-100">
+                { getActiveComponent(activeNavHref) }
+            </div>
         </div>
     );
 };
