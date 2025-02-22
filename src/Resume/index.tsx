@@ -2,8 +2,8 @@ import React from "react"
 
 export default function Resume() {
   return (
-    <div className="relative isolate px-6 pt-14 lg:px-8">
-      <div className="mx-auto max-w-2xl">
+    <div className="relative isolate lg:px-8">
+      <div className="mx-auto max-w-2xl md:py-16 xs:py-8">
         <iframe
           title="resume"
           className="h-screen max-w-820px w-full"

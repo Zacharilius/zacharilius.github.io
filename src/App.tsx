@@ -30,13 +30,13 @@ const App = () => {
     }
 
     return (
-        <div className="bg-white">
+        <div className="bg-gray-100">
             <Nav
                 navigationItems={navigationItems}
                 setNavHref={setActiveNavHref}
                 activeNavHref={activeNavHref}
             />
-            <div className="container mx-auto p-4 bg-gray-100">
+            <div className="container mx-auto bg-gray-100">
                 { getActiveComponent(activeNavHref) }
             </div>
         </div>
