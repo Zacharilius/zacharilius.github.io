@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './App.css';
 import About from './About';
+import Maps from './Maps';
 import Nav from './Nav';
 import Projects from './Projects';
 import Resume from './Resume';
@@ -13,6 +14,7 @@ export interface NavigationItem {
 
 const navigationItems: NavigationItem[] = [
   { name: 'About', href: '#about', component: <About/>},
+  { name: 'Maps', href: '#maps', component: <Maps/>},
   { name: 'Projects', href: '#projects', component: <Projects/> },
   { name: 'Resume', href: '#resume', component: <Resume/> },
 ];
