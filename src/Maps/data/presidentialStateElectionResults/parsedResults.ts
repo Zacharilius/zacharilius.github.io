@@ -64,6 +64,7 @@ interface StateYear {
 }
 
 export const getPresendentialElectionResultsForYearIndex = (yearIndex: number): Record<string, StateYear>=> {
+    yearIndex = moduloYearIndex(yearIndex);
     const resultForState: Record<string, StateYear> = {};
     stateResults.forEach((stateResult => {
       const code = stateResult.yearResultsCodes[yearIndex];
@@ -81,6 +82,11 @@ interface YearInfo {
   value: string;
 }
 
-export const getPresendentialElectionYearInfosForYearIndex = (yearIndex: number): YearInfo=> {
+export const getPresendentialElectionYearInfosForYearIndex = (yearIndex: number): YearInfo => {
+  yearIndex = moduloYearIndex(yearIndex);
   return stateLinks[yearIndex];
+}
+
+const moduloYearIndex = (yearIndex: number): number => {
+  return yearIndex % stateLinks.length;
 }
