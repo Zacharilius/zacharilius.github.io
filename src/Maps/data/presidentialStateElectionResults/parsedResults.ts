@@ -1,6 +1,37 @@
 import stateLinks from './stateLinks.json';
 import stateResults from './stateResults.json';
 
+interface Result {
+	winner: string;
+	href: string;
+	color: string;
+}
+
+export interface Election {
+	year: string;
+	link: string;
+	results: Record<string, Result>
+}
+
+export const getElectionForYearIndex = (yearIndex: number): Election => {
+	yearIndex = yearIndex % stateLinks.length;
+	const stateLink = stateLinks[yearIndex];
+	const results: Record<string, Result> = {};
+	stateResults.forEach((stateResult => {
+		const code = stateResult.yearResultsCodes[yearIndex];
+		results[stateResult.state] = {
+			winner: tryGetWinnerByCode(code),
+			href: stateResult.statehref,
+			color: tryGetColorByCode(code)
+		}
+	}));
+	return {
+		year: stateLink.value,
+		link: stateLink.link,
+		results,
+	}
+}
+
 const NAME_FOR_CODE: Record<string, string> = {
 	'R': 'Republican',
 	'D': 'Democratic',
@@ -23,6 +54,10 @@ const NAME_FOR_CODE: Record<string, string> = {
 	'AM': 'Anti-Masonic',
 	'N': 'Nullifier',
 	'SP': 'Split evenly',
+	'Jackson': 'Jackson',
+	'Adams': 'Adams',
+	'Crawford': 'Crawford',
+	'Clay': 'Clay',
 };
 
 const COLOR_FOR_NAME: Record<string, string> = {
@@ -47,6 +82,10 @@ const COLOR_FOR_NAME: Record<string, string> = {
 	'AM': '#fdbf6f',
 	'N': '#ff7f00',
 	'SP': '#cab2d6',
+	'Jackson': '#6a3d9a',
+	'Adams': '#ffff99',
+	'Crawford': '#b15928',
+	'Clay': '#a6cee3',
 }
 
 const tryGetWinnerByCode = (code: string): string => {
@@ -55,38 +94,4 @@ const tryGetWinnerByCode = (code: string): string => {
 
 const tryGetColorByCode = (code: string): string => {
 	return COLOR_FOR_NAME[code] ?? '#808080';
-}
-
-interface StateYear {
-  name: string;
-  href: string;
-  color: string;
-}
-
-export const getPresendentialElectionResultsForYearIndex = (yearIndex: number): Record<string, StateYear>=> {
-	yearIndex = moduloYearIndex(yearIndex);
-	const resultForState: Record<string, StateYear> = {};
-	stateResults.forEach((stateResult => {
-		const code = stateResult.yearResultsCodes[yearIndex];
-		resultForState[stateResult.state] = {
-			name: tryGetWinnerByCode(code),
-			href: stateResult.statehref,
-			color: tryGetColorByCode(code)
-		}
-	}));
-	return resultForState;
-}
-
-interface YearInfo {
-  link: string;
-  value: string;
-}
-
-export const getPresendentialElectionYearInfosForYearIndex = (yearIndex: number): YearInfo => {
-	yearIndex = moduloYearIndex(yearIndex);
-	return stateLinks[yearIndex];
-}
-
-const moduloYearIndex = (yearIndex: number): number => {
-	return yearIndex % stateLinks.length;
 }
