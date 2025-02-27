@@ -7,6 +7,7 @@ import {
 	getElectionForYearIndex,
 } from './data/presidentialStateElectionResults/parsedResults';
 import { useInterval } from '../utils';
+import { Feature, GeoJsonObject, GeoJsonProperties, Geometry } from 'geojson';
 
 // Centers on the Lower 48 United States
 const center: LatLngExpression = [37.8, -96];
@@ -23,7 +24,7 @@ export default function Maps() {
 
 	const [yearIndex, setYearIndex] = useState(0);
 	const [activeElection, setActiveElection] = useState<Election>(getElectionForYearIndex(yearIndex))
-	const [geoJsonLayer, setGeoJsonLayer] = useState<L.GeoJSON>(null);
+	const [geoJsonLayer, setGeoJsonLayer] = useState<L.GeoJSON>();
 	const [activeStateName, setActiveStateName] = useState<string>('');
 
 	const getColor = (stateName: string) => {
@@ -31,9 +32,9 @@ export default function Maps() {
 		return color ?? MISSING_ELECTION_FALLBACK_COLOR;
 	}
 
-	function style(feature: unknown): unknown {
+	function style(feature: Feature<Geometry, GeoJsonProperties> | undefined): L.PathOptions {
 		return {
-			fillColor: getColor(feature.properties.name, yearIndex),
+			fillColor: getColor(feature?.properties?.name),
 			weight: 1,
 			opacity: .6,
 			color: 'white',
@@ -46,7 +47,7 @@ export default function Maps() {
 		if (geoJsonLayer) {
 			geoJsonLayer.clearLayers();
 		}
-		const layer = L.geoJSON(usStates, {
+		const layer = L.geoJSON(usStates as GeoJsonObject, {
 			style,
 			onEachFeature,
 		}).addTo(map);
@@ -54,7 +55,7 @@ export default function Maps() {
 		setGeoJsonLayer(layer);
 	}
 
-	function onEachFeature(_feature: unknown, layer: L.GeoJSON) {
+	function onEachFeature(_feature: Feature<Geometry, GeoJsonProperties>, layer: L.GeoJSON) {
 		layer.on({
 			mouseover: highlightFeature,
 			mouseout: resetHighlight
@@ -97,7 +98,7 @@ export default function Maps() {
 		_map = map;
 
 		if (geoJsonLayer) {
-			const layer = L.geoJSON(usStates, {
+			const layer = L.geoJSON(usStates as GeoJsonObject, {
 				style,
 				onEachFeature,
 			}).addTo(map);
@@ -119,7 +120,8 @@ export default function Maps() {
 	return (
 		<div className="container mx-auto p-4 bg-gray-100">
 			<h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Maps</h2>
-			<p className="text-1xl font-bold mb-8 text-center text-gray-600">{activeElection?.year} United State Presidential Election Results</p>
+			<h3 className="text-2xl font-bold text-center text-gray-800">{activeElection?.year} United States Presidential Elections Results by party.</h3>
+			<p className="text-1xl font-bold text-center text-gray-800">Data was compiled from <a className="text-blue-600" href="https://en.wikipedia.org/wiki/List_of_United_States_presidential_election_results_by_state">Wikipedia</a></p>
 			<div className="relative">
 				<div ref={mapRef} style={{ height: '500px', width: '100%' }}></div>;
 				{
