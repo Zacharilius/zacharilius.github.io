@@ -1,5 +1,6 @@
 import stateLinks from './stateLinks.json';
 import stateResults from './stateResults.json';
+import winnerByYear from './winnerByYear.json';
 
 interface Result {
 	winner: string;
@@ -10,12 +11,17 @@ interface Result {
 export interface Election {
 	year: string;
 	link: string;
-	results: Record<string, Result>
+	overallWinner: {
+		name: string;
+		politicalParty: string;
+	};
+	results: Record<string, Result>;
 }
 
 export const getElectionForYearIndex = (yearIndex: number): Election => {
 	yearIndex = yearIndex % stateLinks.length;
 	const stateLink = stateLinks[yearIndex];
+	const overallWinner = getElectionWinnerCodeByYear(stateLink.value)
 	const results: Record<string, Result> = {};
 	stateResults.forEach((stateResult => {
 		const code = stateResult.yearResultsCodes[yearIndex];
@@ -28,6 +34,10 @@ export const getElectionForYearIndex = (yearIndex: number): Election => {
 	return {
 		year: stateLink.value,
 		link: stateLink.link,
+		overallWinner: {
+			name: overallWinner.name,
+			politicalParty : tryGetWinnerByCode(overallWinner.code)
+		},
 		results,
 	}
 }
@@ -38,7 +48,7 @@ const NAME_FOR_CODE: Record<string, string> = {
 	'DR': 'Democratic-Republican',
 	'W': 'Whig',
 	'F': 'Federalist',
-	'GW': 'George Washington',
+	'GW': 'No Party',
 	'NR': 'National Republican',
 	'SD': 'Southern Democrat',
 	'BM': 'Progressive "Bull Moose"',
@@ -89,9 +99,29 @@ const COLOR_FOR_NAME: Record<string, string> = {
 }
 
 const tryGetWinnerByCode = (code: string): string => {
+	const nameForCode = NAME_FOR_CODE[code];
+	if (code !== '' && !nameForCode) {
+		console.error('Missing nameForCode', code);
+	}
 	return NAME_FOR_CODE[code] ?? '';
 }
 
 const tryGetColorByCode = (code: string): string => {
+	const colorForCode = COLOR_FOR_NAME[code];
+	if (code !== '' && !colorForCode) {
+		console.error('Missing colorForCode', code);
+	}
 	return COLOR_FOR_NAME[code] ?? '#808080';
+}
+
+interface WinnerByYear {
+	code: string;
+	name: string;
+}
+
+const getElectionWinnerCodeByYear = (year: string): WinnerByYear => {
+	if (winnerByYear[year] === undefined) {
+		console.error('Missing winnerByYear', year);
+	}
+	return winnerByYear[year] ?? 'N/A';
 }

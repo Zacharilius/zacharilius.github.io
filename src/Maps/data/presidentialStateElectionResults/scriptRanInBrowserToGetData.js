@@ -6,9 +6,9 @@ let tableEl = document.querySelector('.wikitable');
 // Iterates through table and gets a sorted array ascending by year with links to the election results in wikipedia.
 function parseStateLinks (tableEl) {
 	let headerRow = tableEl.querySelector('tr');
-	let stateLinks = headerRow.querySelectorAll('th a');
+	let electionLinks = headerRow.querySelectorAll('th a');
 
-	return Array.from(stateLinks).map((link) => {
+	return Array.from(electionLinks).map((link) => {
 		return {
 			link: link.href,
 			value: link.textContent.replace(/\n/g, '')
@@ -37,3 +37,37 @@ function parseStateResults (tableEl) {
 	});
 }
 let stateResults = parseStateResults(tableEl);
+
+// Iterates through table and gets a sorted array ascending by year with links to the election results in wikipedia.
+function parseWinnerByYear (tableEl) {
+	let headerRow = tableEl.querySelector('tr');
+	let electionLinks = headerRow.querySelectorAll('th a');
+	let electionYears = Array.from(electionLinks).map(electionLink => electionLink.textContent.replace(/\n/g, ''));
+
+	const codeForYear = {};
+
+	// All body rows
+	let bodyRows = Array.from(tableEl.querySelectorAll('tr')).splice(1);
+	bodyRows.forEach((bodyRow) => {
+		const bodyRowCells = Array.from(bodyRow.querySelectorAll('td'));
+		bodyRowCells.forEach((bodyRowCell, index) => {
+			const boldCell = bodyRowCell.querySelector('b');
+			if (boldCell) {
+				if (bodyRowCells.length != electionYears.length) {
+					throw Error('Mismatch in size so cannot compute year')
+				}
+				const code = boldCell.textContent.replace(/\n/g, '');
+				const year = electionYears[index];
+				if (codeForYear[year] != undefined && codeForYear[year].code != code) {
+					throw Error(`Year (${year}) already has a code  (${codeForYear[year]}) and found a mismatch with new code (${code})`);
+				}
+				codeForYear[electionYears[index]] = {
+					code,
+					name: '',
+				};
+			}
+		});
+	});
+	return codeForYear;
+}
+let winnerCodeByYear = parseWinnerByYear(tableEl);

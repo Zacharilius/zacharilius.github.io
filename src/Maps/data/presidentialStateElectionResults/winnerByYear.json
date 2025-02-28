@@ -1,0 +1,242 @@
+{
+    "1788": {
+        "code": "GW",
+        "name": "George Washington"
+    },
+    "1792": {
+        "code": "GW",
+        "name": "George Washington"
+    },
+    "1796": {
+        "code": "F",
+        "name": "John Adams"
+    },
+    "1800": {
+        "code": "DR",
+        "name": "Thomas Jefferson"
+    },
+    "1804": {
+        "code": "DR",
+        "name": "Thomas Jefferson"
+    },
+    "1808": {
+        "code": "DR",
+        "name": "James Madison"
+    },
+    "1812": {
+        "code": "DR",
+        "name": "James Madison"
+    },
+    "1816": {
+        "code": "DR",
+        "name": "James Monroe"
+    },
+    "1820": {
+        "code": "DR",
+        "name": "James Monroe"
+    },
+    "1824": {
+        "code": "Adams",
+        "name": "John Quincy Adams"
+    },
+    "1828": {
+        "code": "D",
+        "name": "Andrew Jackson"
+    },
+    "1832": {
+        "code": "D",
+        "name": "Andrew Jackson"
+    },
+    "1836": {
+        "code": "D",
+        "name": "Martin Van Buren"
+    },
+    "1840": {
+        "code": "W",
+        "name": "William Henry Harrison"
+    },
+    "1844": {
+        "code": "D",
+        "name": "James K. Polk"
+    },
+    "1848": {
+        "code": "W",
+        "name": "Zachary Taylor"
+    },
+    "1852": {
+        "code": "D",
+        "name": "Franklin Pierce"
+    },
+    "1856": {
+        "code": "D",
+        "name": "James Buchanan"
+    },
+    "1860": {
+        "code": "R",
+        "name": "Abraham Lincoln"
+    },
+    "1864": {
+        "code": "R",
+        "name": "Abraham Lincoln"
+    },
+    "1868": {
+        "code": "R",
+        "name": "Ulysses S. Grant"
+    },
+    "1872": {
+        "code": "R",
+        "name": "Ulysses S. Grant"
+    },
+    "1876": {
+        "code": "R",
+        "name": "Rutherford B. Hayes"
+    },
+    "1880": {
+        "code": "R",
+        "name": "James A. Garfield"
+    },
+    "1884": {
+        "code": "D",
+        "name": "Grover Cleveland"
+    },
+    "1888": {
+        "code": "R",
+        "name": "Benjamin Harrison"
+    },
+    "1892": {
+        "code": "D",
+        "name": "Grover Cleveland"
+    },
+    "1896": {
+        "code": "R",
+        "name": "William McKinley"
+    },
+    "1900": {
+        "code": "R",
+        "name": "William McKinley"
+    },
+    "1904": {
+        "code": "R",
+        "name": "Theodore Roosevelt"
+    },
+    "1908": {
+        "code": "R",
+        "name": "William Howard Taft"
+    },
+    "1912": {
+        "code": "D",
+        "name": "Woodrow Wilson"
+    },
+    "1916": {
+        "code": "D",
+        "name": "Woodrow Wilson"
+    },
+    "1920": {
+        "code": "R",
+        "name": "Warren G. Harding"
+    },
+    "1924": {
+        "code": "R",
+        "name": "Calvin Coolidge"
+    },
+    "1928": {
+        "code": "R",
+        "name": "Herbert Hoover"
+    },
+    "1932": {
+        "code": "D",
+        "name": "Franklin D. Roosevelt"
+    },
+    "1936": {
+        "code": "D",
+        "name": "Franklin D. Roosevelt"
+    },
+    "1940": {
+        "code": "D",
+        "name": "Franklin D. Roosevelt"
+    },
+    "1944": {
+        "code": "D",
+        "name": "Franklin D. Roosevelt"
+    },
+    "1948": {
+        "code": "D",
+        "name": "Harry S. Truman"
+    },
+    "1952": {
+        "code": "R",
+        "name": "Dwight D. Eisenhower"
+    },
+    "1956": {
+        "code": "R",
+        "name": "Dwight D. Eisenhower"
+    },
+    "1960": {
+        "code": "D",
+        "name": "John F. Kennedy"
+    },
+    "1964": {
+        "code": "D",
+        "name": "Lyndon B. Johnson"
+    },
+    "1968": {
+        "code": "R",
+        "name": "Richard Nixon"
+    },
+    "1972": {
+        "code": "R",
+        "name": "Richard Nixon"
+    },
+    "1976": {
+        "code": "D",
+        "name": "Jimmy Carter"
+    },
+    "1980": {
+        "code": "R",
+        "name": "Ronald Reagan"
+    },
+    "1984": {
+        "code": "R",
+        "name": "Ronald Reagan"
+    },
+    "1988": {
+        "code": "R",
+        "name": "George H. W. Bush"
+    },
+    "1992": {
+        "code": "D",
+        "name": "Bill Clinton"
+    },
+    "1996": {
+        "code": "D",
+        "name": "Bill Clinton"
+    },
+    "2000": {
+        "code": "R",
+        "name": "George W. Bush"
+    },
+    "2004": {
+        "code": "R",
+        "name": "George W. Bush"
+    },
+    "2008": {
+        "code": "D",
+        "name": "Barack Obama"
+    },
+    "2012": {
+        "code": "D",
+        "name": "Barack Obama"
+    },
+    "2016": {
+        "code": "R",
+        "name": "Donald Trump"
+    },
+    "2020": {
+        "code": "D",
+        "name": "Joe Biden"
+    },
+    "2024": {
+        "code": "R",
+        "name": "Donald Trump"
+    }
+}
