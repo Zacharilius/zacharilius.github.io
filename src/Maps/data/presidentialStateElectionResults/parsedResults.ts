@@ -1,6 +1,13 @@
 import stateLinks from './stateLinks.json';
 import stateResults from './stateResults.json';
-import winnerByYear from './winnerByYear.json';
+import _winnerByYear from './winnerByYear.json';
+
+interface WinnerByYear {
+	code: string;
+	name: string;
+}
+
+const winnerByYear: Record<string, WinnerByYear> = _winnerByYear;
 
 interface Result {
 	winner: string;

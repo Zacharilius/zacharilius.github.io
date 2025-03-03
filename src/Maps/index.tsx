@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { Button } from '@headlessui/react'
 import { BackwardIcon, ForwardIcon, PauseIcon, PlayIcon } from '@heroicons/react/24/outline'
 import L, { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -93,10 +94,12 @@ export default function Maps() {
 
 	function updateMapYear (addOrSubtract: number) {
 		const newYearIndex = yearIndex + addOrSubtract;
-		setYearIndex(newYearIndex);
-		setActiveElection(getElectionForYearIndex(newYearIndex));
-		if (_map) {
-			updateGeoJsonLayer(_map);
+		if (newYearIndex >= 0) {
+			setYearIndex(newYearIndex);
+			setActiveElection(getElectionForYearIndex(newYearIndex));
+			if (_map) {
+				updateGeoJsonLayer(_map);
+			}
 		}
 	}
 
@@ -145,7 +148,9 @@ export default function Maps() {
 				}
 				{
 					<div className='absolute bottom-10 left-4 bg-gray-500 text-gray p-2'>
-						<BackwardIcon aria-hidden="true" className="size-4 hover:bg-gray-700 active:bg-gray-800" onClick={() => updateMapYear(-1)} />
+						<Button disabled={yearIndex < 0} onClick={() => updateMapYear(-1)} className={yearIndex <= 0 ? "cursor-not-allowed" : "hover:bg-gray-700 active:bg-gray-800"}>
+							<BackwardIcon aria-hidden="true" className="size-4" />
+						</Button>
 						{
 							isPlaying
 								?
@@ -153,7 +158,9 @@ export default function Maps() {
 								:
 								<PlayIcon aria-hidden="true" className="size-4 hover:bg-gray-700 active:bg-gray-800" onClick={() => setIsPlaying(true)} />
 						}
-						<ForwardIcon aria-hidden="true" className="size-4 hover:bg-gray-700 active:bg-gray-800" onClick={() => updateMapYear(1)} />
+						<Button onClick={() => updateMapYear(1)} className="hover:bg-gray-700 active:bg-gray-800" >
+							<ForwardIcon aria-hidden="true" className="size-4" />
+						</Button>
 					</div>
 				}
 			</div>
