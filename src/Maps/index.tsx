@@ -3,7 +3,7 @@ import { Button } from '@headlessui/react'
 import { BackwardIcon, ForwardIcon, PauseIcon, PlayIcon } from '@heroicons/react/24/outline'
 import L, { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import usStates from './data/presidentialStateElectionResults/usStates.json';
+import usStates from './geoJson/usStates.json';
 import {
 	Election,
 	getElectionForYearIndex,
@@ -60,29 +60,26 @@ export default function Maps() {
 
 	function onEachFeature(_feature: Feature<Geometry, GeoJsonProperties>, layer: L.GeoJSON) {
 		layer.on({
+			click: clickFeature,
 			mouseover: highlightFeature,
 			mouseout: resetHighlight
 		});
 	}
 
+	function clickFeature (e: L.LeafletMouseEvent) {
+		const layer = e.target;
+		const link = activeElection?.results?.[layer.feature.properties.name]?.href;
+		window.open(link, '_blank');
+	}
+
 	function highlightFeature(e: L.LeafletMouseEvent) {
 		const layer = e.target;
-		layer.setStyle({
-			weight: 5,
-			color: '#666',
-			dashArray: '',
-			fillOpacity: 0.7
-		});
 		setActiveStateName(layer.feature.properties.name);
 
 		layer.bringToFront();
 	}
 
-	function resetHighlight(e: L.LeafletMouseEvent) {
-		if (geoJsonLayer) {
-			// TODO: This resets the style but... if time has changed it is reset wrong.
-			geoJsonLayer.resetStyle(e.target);
-		}
+	function resetHighlight() {
 		setActiveStateName('');
 	}
 
@@ -132,7 +129,7 @@ export default function Maps() {
 	return (
 		<div className="container mx-auto p-4 bg-gray-100">
 			<h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Maps</h2>
-			<h3 className="text-2xl font-bold text-center text-gray-800">{activeElection?.year} United States Presidential Elections Results by party.</h3>
+			<h3 className="text-2xl font-bold text-center text-gray-800"><a href={activeElection?.link} target="_blank" className='text-blue-600'>{activeElection?.year}</a> United States Presidential Elections Results by party.</h3>
 			<h4 className="text-1xl font-bold text-center text-gray-800">Overall Winner: {activeElection?.overallWinner?.name} - {activeElection?.overallWinner?.politicalParty}</h4>
 			<div className="relative">
 				<div ref={mapRef} style={{ height: '500px', width: '100%' }}></div>;

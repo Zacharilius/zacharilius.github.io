@@ -2,7 +2,7 @@
     {
         "state": "Alabama",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Alabama",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -68,7 +68,7 @@
     {
         "state": "Alaska",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Alaska",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -134,7 +134,7 @@
     {
         "state": "Arizona",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Arizona",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -200,7 +200,7 @@
     {
         "state": "Arkansas",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Arkansas",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -266,7 +266,7 @@
     {
         "state": "California",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_California",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -332,7 +332,7 @@
     {
         "state": "Colorado",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Colorado",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -398,9 +398,9 @@
     {
         "state": "Connecticut",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Connecticut",
-        "yearResultsCodes": [
-            "GW",
-            "GW",
+        "yearResultsPoliticalPartyCodes": [
+            "NP",
+            "NP",
             "F",
             "F",
             "F",
@@ -464,9 +464,9 @@
     {
         "state": "Delaware",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Delaware",
-        "yearResultsCodes": [
-            "GW",
-            "GW",
+        "yearResultsPoliticalPartyCodes": [
+            "NP",
+            "NP",
             "F",
             "F",
             "F",
@@ -530,7 +530,7 @@
     {
         "state": "D.C.",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_the_District_of_Columbia",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -596,7 +596,7 @@
     {
         "state": "Florida",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Florida",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -662,9 +662,9 @@
     {
         "state": "Georgia",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Georgia",
-        "yearResultsCodes": [
-            "GW",
-            "GW",
+        "yearResultsPoliticalPartyCodes": [
+            "NP",
+            "NP",
             "DR",
             "DR",
             "DR",
@@ -728,7 +728,7 @@
     {
         "state": "Hawaii",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Hawaii",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -794,7 +794,7 @@
     {
         "state": "Idaho",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Idaho",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -860,7 +860,7 @@
     {
         "state": "Illinois",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Illinois",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -926,7 +926,7 @@
     {
         "state": "Indiana",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Indiana",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -992,7 +992,7 @@
     {
         "state": "Iowa",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Iowa",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -1058,7 +1058,7 @@
     {
         "state": "Kansas",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Kansas",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -1124,9 +1124,9 @@
     {
         "state": "Kentucky",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Kentucky",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
-            "GW",
+            "NP",
             "DR",
             "DR",
             "DR",
@@ -1190,7 +1190,7 @@
     {
         "state": "Louisiana",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Louisiana",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -1256,7 +1256,7 @@
     {
         "state": "Maine",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Maine",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -1322,9 +1322,9 @@
     {
         "state": "Maryland",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Maryland",
-        "yearResultsCodes": [
-            "GW",
-            "GW",
+        "yearResultsPoliticalPartyCodes": [
+            "NP",
+            "NP",
             "F",
             "SP",
             "DR",
@@ -1388,9 +1388,9 @@
     {
         "state": "Massachusetts",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Massachusetts",
-        "yearResultsCodes": [
-            "GW",
-            "GW",
+        "yearResultsPoliticalPartyCodes": [
+            "NP",
+            "NP",
             "F",
             "F",
             "DR",
@@ -1454,7 +1454,7 @@
     {
         "state": "Michigan",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Michigan",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -1520,7 +1520,7 @@
     {
         "state": "Minnesota",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Minnesota",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -1586,7 +1586,7 @@
     {
         "state": "Mississippi",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Mississippi",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -1652,7 +1652,7 @@
     {
         "state": "Missouri",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Missouri",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -1718,7 +1718,7 @@
     {
         "state": "Montana",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Montana",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -1784,7 +1784,7 @@
     {
         "state": "Nebraska",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Nebraska",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -1850,7 +1850,7 @@
     {
         "state": "Nevada",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Nevada",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -1916,9 +1916,9 @@
     {
         "state": "New Hampshire",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_New_Hampshire",
-        "yearResultsCodes": [
-            "GW",
-            "GW",
+        "yearResultsPoliticalPartyCodes": [
+            "NP",
+            "NP",
             "F",
             "F",
             "DR",
@@ -1982,9 +1982,9 @@
     {
         "state": "New Jersey",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_New_Jersey",
-        "yearResultsCodes": [
-            "GW",
-            "GW",
+        "yearResultsPoliticalPartyCodes": [
+            "NP",
+            "NP",
             "F",
             "F",
             "DR",
@@ -2048,7 +2048,7 @@
     {
         "state": "New Mexico",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_New_Mexico",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -2114,9 +2114,9 @@
     {
         "state": "New York",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_New_York",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
-            "GW",
+            "NP",
             "F",
             "DR",
             "DR",
@@ -2180,9 +2180,9 @@
     {
         "state": "North Carolina",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_North_Carolina",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
-            "GW",
+            "NP",
             "DR",
             "DR",
             "DR",
@@ -2246,7 +2246,7 @@
     {
         "state": "North Dakota",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_North_Dakota",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -2312,7 +2312,7 @@
     {
         "state": "Ohio",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Ohio",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -2378,7 +2378,7 @@
     {
         "state": "Oklahoma",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Oklahoma",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -2444,7 +2444,7 @@
     {
         "state": "Oregon",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Oregon",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -2510,9 +2510,9 @@
     {
         "state": "Pennsylvania",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Pennsylvania",
-        "yearResultsCodes": [
-            "GW",
-            "GW",
+        "yearResultsPoliticalPartyCodes": [
+            "NP",
+            "NP",
             "DR",
             "DR",
             "DR",
@@ -2576,9 +2576,9 @@
     {
         "state": "Rhode Island",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Rhode_Island",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
-            "GW",
+            "NP",
             "F",
             "F",
             "DR",
@@ -2642,9 +2642,9 @@
     {
         "state": "South Carolina",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_South_Carolina",
-        "yearResultsCodes": [
-            "GW",
-            "GW",
+        "yearResultsPoliticalPartyCodes": [
+            "NP",
+            "NP",
             "DR",
             "DR",
             "DR",
@@ -2708,7 +2708,7 @@
     {
         "state": "South Dakota",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_South_Dakota",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -2774,7 +2774,7 @@
     {
         "state": "Tennessee",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Tennessee",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "DR",
@@ -2840,7 +2840,7 @@
     {
         "state": "Texas",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Texas",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -2906,7 +2906,7 @@
     {
         "state": "Utah",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Utah",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -2972,9 +2972,9 @@
     {
         "state": "Vermont",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Vermont",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
-            "GW",
+            "NP",
             "F",
             "F",
             "DR",
@@ -3038,9 +3038,9 @@
     {
         "state": "Virginia",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Virginia",
-        "yearResultsCodes": [
-            "GW",
-            "GW",
+        "yearResultsPoliticalPartyCodes": [
+            "NP",
+            "NP",
             "DR",
             "DR",
             "DR",
@@ -3104,7 +3104,7 @@
     {
         "state": "Washington",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Washington_(state)",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -3170,7 +3170,7 @@
     {
         "state": "West Virginia",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_West_Virginia",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -3236,7 +3236,7 @@
     {
         "state": "Wisconsin",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Wisconsin",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",
@@ -3302,7 +3302,7 @@
     {
         "state": "Wyoming",
         "statehref": "https://en.wikipedia.org/wiki/United_States_presidential_elections_in_Wyoming",
-        "yearResultsCodes": [
+        "yearResultsPoliticalPartyCodes": [
             "",
             "",
             "",

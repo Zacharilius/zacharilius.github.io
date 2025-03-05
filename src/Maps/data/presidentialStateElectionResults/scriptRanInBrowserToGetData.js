@@ -25,14 +25,14 @@ function parseStateResults (tableEl) {
 		let stateEl = row.querySelector('th');
 		let state = stateEl.textContent.replace(/\n/g, '');
 		let stateHref = stateEl.querySelector('a').href;
-		let yearResultsCodes = Array.from(row.querySelectorAll('td')).map((cell) => {
+		let yearResultsPoliticalPartyCodes = Array.from(row.querySelectorAll('td')).map((cell) => {
 			return cell.textContent.replace(/\n/g, '');
 		});
 
 		return {
 			state,
 			stateHref,
-			yearResultsCodes,
+			yearResultsPoliticalPartyCodes,
 		};
 	});
 }
@@ -56,13 +56,13 @@ function parseWinnerByYear (tableEl) {
 				if (bodyRowCells.length != electionYears.length) {
 					throw Error('Mismatch in size so cannot compute year')
 				}
-				const code = boldCell.textContent.replace(/\n/g, '');
+				const politicalPartyCode = boldCell.textContent.replace(/\n/g, '');
 				const year = electionYears[index];
-				if (codeForYear[year] != undefined && codeForYear[year].code != code) {
-					throw Error(`Year (${year}) already has a code  (${codeForYear[year]}) and found a mismatch with new code (${code})`);
+				if (codeForYear[year] != undefined && codeForYear[year].politicalPartyCode != politicalPartyCode) {
+					throw Error(`Year (${year}) already has a politicalPartyCode  (${codeForYear[year]}) and found a mismatch with new politicalPartyCode (${code})`);
 				}
 				codeForYear[electionYears[index]] = {
-					code,
+					politicalPartyCode,
 					name: '',
 				};
 			}

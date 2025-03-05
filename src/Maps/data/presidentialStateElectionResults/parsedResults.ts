@@ -3,7 +3,7 @@ import stateResults from './stateResults.json';
 import _winnerByYear from './winnerByYear.json';
 
 interface WinnerByYear {
-	code: string;
+	politicalPartyCode: string;
 	name: string;
 }
 
@@ -31,7 +31,7 @@ export const getElectionForYearIndex = (yearIndex: number): Election => {
 	const overallWinner = getElectionWinnerCodeByYear(stateLink.value)
 	const results: Record<string, Result> = {};
 	stateResults.forEach((stateResult => {
-		const code = stateResult.yearResultsCodes[yearIndex];
+		const code = stateResult.yearResultsPoliticalPartyCodes[yearIndex];
 		results[stateResult.state] = {
 			winner: tryGetWinnerByCode(code),
 			href: stateResult.statehref,
@@ -43,19 +43,19 @@ export const getElectionForYearIndex = (yearIndex: number): Election => {
 		link: stateLink.link,
 		overallWinner: {
 			name: overallWinner.name,
-			politicalParty : tryGetWinnerByCode(overallWinner.code)
+			politicalParty : tryGetWinnerByCode(overallWinner.politicalPartyCode)
 		},
 		results,
 	}
 }
 
-const NAME_FOR_CODE: Record<string, string> = {
+const NAME_FOR_POLITICAL_PARTY_CODE: Record<string, string> = {
 	'R': 'Republican',
 	'D': 'Democratic',
 	'DR': 'Democratic-Republican',
 	'W': 'Whig',
 	'F': 'Federalist',
-	'GW': 'No Party',
+	'NP': 'No Party',
 	'NR': 'National Republican',
 	'SD': 'Southern Democrat',
 	'BM': 'Progressive "Bull Moose"',
@@ -83,7 +83,7 @@ const COLOR_FOR_NAME: Record<string, string> = {
 	'DR': '#b2df8a',
 	'W': '#33a02c',
 	'F': '#fb9a99',
-	'GW': '#e31a1c',
+	'NP': '#e31a1c',
 	'NR': '#fdbf6f',
 	'SD': '#ff7f00',
 	'BM': '#cab2d6',
@@ -105,24 +105,24 @@ const COLOR_FOR_NAME: Record<string, string> = {
 	'Clay': '#a6cee3',
 }
 
-const tryGetWinnerByCode = (code: string): string => {
-	const nameForCode = NAME_FOR_CODE[code];
-	if (code !== '' && !nameForCode) {
-		console.error('Missing nameForCode', code);
+const tryGetWinnerByCode = (politicalPartyCode: string): string => {
+	const nameForCode = NAME_FOR_POLITICAL_PARTY_CODE[politicalPartyCode];
+	if (politicalPartyCode !== '' && !nameForCode) {
+		console.error('Missing nameForCode', politicalPartyCode);
 	}
-	return NAME_FOR_CODE[code] ?? '';
+	return NAME_FOR_POLITICAL_PARTY_CODE[politicalPartyCode] ?? '';
 }
 
-const tryGetColorByCode = (code: string): string => {
-	const colorForCode = COLOR_FOR_NAME[code];
-	if (code !== '' && !colorForCode) {
-		console.error('Missing colorForCode', code);
+const tryGetColorByCode = (politicalPartyCode: string): string => {
+	const colorForCode = COLOR_FOR_NAME[politicalPartyCode];
+	if (politicalPartyCode !== '' && !colorForCode) {
+		console.error('Missing colorForCode', politicalPartyCode);
 	}
-	return COLOR_FOR_NAME[code] ?? '#808080';
+	return COLOR_FOR_NAME[politicalPartyCode] ?? '#808080';
 }
 
 interface WinnerByYear {
-	code: string;
+	politicalPartyCode: string;
 	name: string;
 }
 
