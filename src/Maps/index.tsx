@@ -144,18 +144,22 @@ export default function Maps() {
 						<div></div>
 				}
 				{
-					<div className='absolute bottom-10 left-4 bg-gray-500 text-gray p-2'>
-						<Button disabled={yearIndex < 0} onClick={() => updateMapYear(-1)} className={yearIndex <= 0 ? "cursor-not-allowed" : "hover:bg-gray-700 active:bg-gray-800"}>
+					<div className='absolute bottom-10 left-4 bg-gray-500 text-gray'>
+						<Button disabled={yearIndex < 0} onClick={() => updateMapYear(-1)} className={yearIndex <= 0 ? "cursor-not-allowed p-2" : "hover:bg-gray-700 active:bg-gray-800 p-2"}>
 							<BackwardIcon aria-hidden="true" className="size-4" />
 						</Button>
 						{
 							isPlaying
 								?
-								<PauseIcon aria-hidden="true" className="size-4 hover:bg-gray-700 active:bg-gray-800" onClick={() => setIsPlaying(false)} />
+								<Button className="hover:bg-gray-700 active:bg-gray-800 p-2" onClick={() => setIsPlaying(false)}>
+									<PauseIcon aria-hidden="true" className="size-4" />
+								</Button>
 								:
-								<PlayIcon aria-hidden="true" className="size-4 hover:bg-gray-700 active:bg-gray-800" onClick={() => setIsPlaying(true)} />
+								<Button className="hover:bg-gray-700 active:bg-gray-800 p-2" onClick={() => setIsPlaying(true)}>
+									<PlayIcon aria-hidden="true" className="size-4" />
+								</Button>
 						}
-						<Button onClick={() => updateMapYear(1)} className="hover:bg-gray-700 active:bg-gray-800" >
+						<Button onClick={() => updateMapYear(1)} className="hover:bg-gray-700 active:bg-gray-800 p-2" >
 							<ForwardIcon aria-hidden="true" className="size-4" />
 						</Button>
 					</div>
