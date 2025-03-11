@@ -1,4 +1,3 @@
-import React from "react"
 import Project, { ProjectProps } from './Project';
 import { CodeBracketIcon } from '@heroicons/react/24/outline'
 import mapRoomBackground from './images/MapRoomBackground.png'
@@ -99,9 +98,9 @@ const projects: ProjectProps[] = [
 
 export default function Projects() {
 	return (
-		<div className="container mx-auto p-4 bg-gray-100"> {/* Added background to the container */}
+		<div className="container mx-auto p-4 bg-gray-100">
 			<h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Projects</h2>
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> {/* Increased gap */}
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{projects.map((project) => (
 					<Project key={project.title} {...project} />
 				))}

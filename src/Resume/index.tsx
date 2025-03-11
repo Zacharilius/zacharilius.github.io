@@ -1,5 +1,3 @@
-import React from "react"
-
 export default function Resume() {
 	return (
 		<div className="relative isolate lg:px-8">
