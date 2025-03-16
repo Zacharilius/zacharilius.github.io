@@ -35,6 +35,8 @@ jobs:
       # If you use other package managers like yarn or pnpm,
       # you will need to install them first
       - name: Install dependencies
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm i
 
       - name: Build
