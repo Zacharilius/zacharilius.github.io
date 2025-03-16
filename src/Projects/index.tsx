@@ -1,5 +1,5 @@
 import Project, { ProjectProps } from './Project';
-import { CodeBracketIcon } from '@heroicons/react/24/outline'
+import { CodeBracketIcon, PlayIcon } from '@heroicons/react/24/outline'
 import mapRoomBackground from './images/MapRoomBackground.png'
 import forgetMeKnot from './images/ForgetMeKnot.png'
 import horseRunner from './images/HorseRunner.png'
@@ -8,6 +8,7 @@ import williamShakespurr from './images/WilliamShakespurr.jpg'
 import zombieEscape from './images/ZombieEscape.png'
 
 const codeBracketIcon = <CodeBracketIcon className="size-6" />
+const playIcon = <PlayIcon className="size-6" />
 
 const projects: ProjectProps[] = [
 	{
@@ -35,6 +36,10 @@ const projects: ProjectProps[] = [
 			{
 				icon: codeBracketIcon,
 				url: 'https://github.com/Zacharilius/horse-runner'
+			},
+			{
+				icon: playIcon,
+				url: '/horse-runner',
 			}
 		]
 	},

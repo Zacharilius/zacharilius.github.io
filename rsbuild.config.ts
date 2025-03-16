@@ -7,4 +7,10 @@ export default defineConfig({
     title: 'zacharilius.me',
     favicon: './src/favicon.ico',
   },
+  source: {
+    entry: {
+      index: './src/index.tsx',
+      'horse-runner': './node_modules/@zacharilius/horse-runner/src/index.ts',
+    },
+  },
 });
