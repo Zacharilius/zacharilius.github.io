@@ -30,6 +30,7 @@ jobs:
       - name: Use Node.js 20
         uses: actions/setup-node@v3
         with:
+          always-auth: true
           node-version: 20
 
       # If you use other package managers like yarn or pnpm,
